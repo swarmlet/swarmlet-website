@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  website:
+    image: ${SWARMLET_REGISTRY}/website
+    build: .
+    networks:
+      - traefik-public
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels:
+        - traefik.enable=true
+        - traefik.tags=traefik-public
+        - traefik.docker.network=traefik-public
+        - traefik.website.enable=true
+        - traefik.website.port=80
+        - traefik.website.frontend.rule=Host:${DOMAIN}
+        - traefik.website.frontend.entryPoints=http,https
+        - traefik.website.frontend.passHostHeader=true
+        - traefik.website.frontend.headers.SSLRedirect=true
+        - traefik.website.frontend.headers.SSLHost=${DOMAIN}
+        - traefik.website.frontend.headers.STSIncludeSubdomains=true
+        - traefik.website.frontend.headers.STSPreload=true
+
+networks:
+  traefik-public:
+    external: true
