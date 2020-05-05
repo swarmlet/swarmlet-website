@@ -18,7 +18,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Deploy
-    - run: |
+      run: |
         # Consume environment variables
         SSH_PRIVATE_KEY="$SSH_PRIVATE_KEY"
         SWARMLET_USER="$SWARMLET_USER"
