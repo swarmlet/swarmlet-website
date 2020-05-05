@@ -5,12 +5,12 @@ env:
   SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
   SWARMLET_USER: git
   SWARMLET_HOST: swarmlet.dev
-  SWARMLET_APP_NAME: swarmlet-website
+  SWARMLET_APP_NAME: swarmlet-website-staging
   SWARMLET_REMOTE_BRANCH: master
 
 on:
   push:
-    branches: [ master ]
+    branches: [develop]
 
 jobs:
   deploy:
