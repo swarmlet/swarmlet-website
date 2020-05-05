@@ -1,12 +1,12 @@
 name: Deploy to swarm
 
 env:
-  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-  SWARMLET_USER: ${{ secrets.SWARMLET_USER }}
-  SWARMLET_HOST: ${{ secrets.SWARMLET_HOST }}
-  SWARMLET_APP_NAME: ${{ secrets.SWARMLET_APP_NAME }}
-  SWARMLET_REMOTE_BRANCH: ${{ secrets.SWARMLET_REMOTE_BRANCH }}
   GITHUB_SHA: ${{ github.sha }}
+  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  SWARMLET_USER: git
+  SWARMLET_HOST: swarmlet.dev
+  SWARMLET_APP_NAME: swarmlet-website
+  SWARMLET_REMOTE_BRANCH: master
 
 on:
   push:
@@ -19,13 +19,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Deploy
       run: |
-        # Consume environment variables
-        SSH_PRIVATE_KEY="$SSH_PRIVATE_KEY"
-        SWARMLET_USER="$SWARMLET_USER"
-        SWARMLET_HOST="$SWARMLET_HOST"
-        SWARMLET_APP_NAME="$SWARMLET_APP_NAME"
-        SWARMLET_REMOTE_BRANCH="$SWARMLET_REMOTE_BRANCH"
-
         # Setup the SSH environment
         mkdir -p ~/.ssh
         eval `ssh-agent -s`
@@ -35,9 +28,9 @@ jobs:
         chown 400 ~/.ssh/id_rsa
 
         # Setup the git environment
-        REMOTE=$SWARMLET_USER@$SWARMLET_HOST:$SWARMLET_APP_NAME
+        REMOTE_URL=$SWARMLET_USER@$SWARMLET_HOST:$SWARMLET_APP_NAME
         cd $GITHUB_WORKSPACE
-        git remote add swarm $REMOTE
+        git remote add swarm $REMOTE_URL
 
         # Prepare to push to swarm git repository
         REMOTE_REF=$GITHUB_SHA:refs/heads/$SWARMLET_REMOTE_BRANCH:master
