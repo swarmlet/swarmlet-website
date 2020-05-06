@@ -84,17 +84,21 @@ Since we're using `Dockerfile`'s and `docker-compose.yml` files in our projects 
 To install the latest version of Swarmlet, log in to your server as root and run:  
 ```shell
 # Quick installation:
-curl -fsSL https://get.swarmlet.dev | bash
+curl -fsSL https://get.swarmlet.dev | bash -s ROOT_DOMAIN=mydomain.com
 ```
 Or with [options](/docs/getting-started/installation):
 ```shell
-# THIS DOES NOT WORK YET
-
 # Custom installation 
-# curl -fsSL https://get.swarmlet.dev | bash -s \
-#   SWARMLET_DOMAIN=dev.mydomain.com \
-#   CREATE_SWAP=true \
-#   SKIP_SWARMPROM=true
+curl -fsSL https://get.swarmlet.dev | bash -s \
+  ROOT_DOMAIN=dev.mydomain.com \
+  INSTALL_ZSH=true \
+  CREATE_SWAP=true
+
+# Install a different branch
+BRANCH=develop
+curl -fsSL https://raw.githubusercontent.com/swarmlet/swarmlet/$BRANCH/install | bash -s \
+  ROOT_DOMAIN=dev.mydomain.com \
+  INSTALL_BRANCH=$BRANCH
 ```
 The installation should take a few minutes to complete.  
 
