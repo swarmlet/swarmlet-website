@@ -85,7 +85,7 @@ module.exports = {
           ]
         }
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Swarmlet.`
+      copyright: `Swarmlet - ${new Date().getFullYear()}`
     }
   },
   presets: [
