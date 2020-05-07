@@ -8,15 +8,14 @@ title: Installation
 **Requirements**: Bash 4.0 or higher (run `bash --version`)  
 > *Recommended distribution: Ubuntu 18.04 x64*  
 
+### Quick installation
 To install the latest version of Swarmlet, log in to your server as root and run:  
 ```shell
-# Quick installation:
 curl -fsSL https://get.swarmlet.dev | bash -s ROOT_DOMAIN=mydomain.com
 ```
 
 ### Custom installation
 ```shell
-# Custom installation:
 curl -fsSL https://get.swarmlet.dev | bash -s \
   ROOT_DOMAIN=dev.mydomain.com \
   INSTALL_ZSH=true \
@@ -27,8 +26,9 @@ BRANCH=develop
 curl -fsSL https://raw.githubusercontent.com/swarmlet/swarmlet/$BRANCH/install | bash -s \
   ROOT_DOMAIN=dev.mydomain.com \
   INSTALL_BRANCH=$BRANCH
-
-# Installation options:
+```
+### Installation options
+```shell
 ROOT_DOMAIN=$HOSTNAME       # (default $HOSTNAME) The domain to use for deployment of included services
 INSTALLATION_MODE=full      # (default full, options: full|minimal|bare) .. TODO
 INSTALL_BRANCH=master       # (default master) The default branch to install
