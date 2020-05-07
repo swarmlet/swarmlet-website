@@ -14,7 +14,7 @@ To install the latest version of Swarmlet, log in to your server as root and run
 curl -fsSL https://get.swarmlet.dev | bash -s ROOT_DOMAIN=mydomain.com
 ```
 
-### TODO
+### Custom installation
 ```shell
 # Custom installation:
 curl -fsSL https://get.swarmlet.dev | bash -s \
