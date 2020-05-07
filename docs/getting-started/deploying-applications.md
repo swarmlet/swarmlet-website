@@ -13,7 +13,7 @@ title: Deploying applications
 - Wait for Traefik to update it's configuration and visit your app at [https://my-app.mydomain.com]()
 
 ## Example application setup
-This guide describes how to deploy a simple Python web server using Redis on your swarm.  
+This guide describes how to deploy a simple Python web server using a Redis backend on your swarm.  
 
 Create a new project locally:
 ```shell
@@ -105,11 +105,6 @@ Define environment variables in `.env`:
 ```shell
 DOMAIN=mydomain.com
 ```
-> Or add the environment variables to the application stack configuration on the server:
-```shell
-swarmlet config:set my-app DOMAIN=mydomain.com
-```
-
 Create a new commit and deploy the application to the swarm using `git push`:
 ```shell
 git add .
