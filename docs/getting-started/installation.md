@@ -17,22 +17,32 @@ curl -fsSL https://get.swarmlet.dev | bash
 ### TODO
 ```shell
 # Custom installation:
-# curl -fsSL https://get.swarmlet.dev | bash -s \
-#   SWARMLET_DOMAIN=dev.mydomain.com \
-#   CREATE_SWAP=true \
-#   SKIP_SWARMPROM=true
+curl -fsSL https://get.swarmlet.dev | bash -s \
+  ROOT_DOMAIN=dev.mydomain.com \
+  INSTALL_ZSH=true \
+  CREATE_SWAP=true
 
-# # Available installation options:
-# SWARMLET_DOMAIN=mydomain.com  # (defaults to server IP address)
-# DEBUG=true                    # (default false) Run installation in debug mode
-# CREATE_SWAP=true              # (default false) Allocate 1GB of swap space
-# SKIP_METRICS=true             # (default false) Skip installation of Swarmpit and Swarmprom
-# SKIP_SWARMPIT=true            # (default false) Skip installation of Swarmpit
-# SKIP_SWARMPROM=true           # (default false) Skip installation of Swarmprom
+# Install a different branch:
+BRANCH=develop
+curl -fsSL https://raw.githubusercontent.com/swarmlet/swarmlet/$BRANCH/install | bash -s \
+  ROOT_DOMAIN=dev.mydomain.com \
+  INSTALL_BRANCH=$BRANCH
+
+# Installation options:
+ROOT_DOMAIN=$HOSTNAME       # (default $HOSTNAME) The domain to use for deployment of included services
+INSTALLATION_MODE=full      # (default full, options: full|minimal|bare) .. TODO
+INSTALL_BRANCH=master       # (default master) The default branch to install
+INTERACTIVE=false           # (default false) Use CLI wizard to setup Swarmlet
+CREATE_SWAP=false           # (default false) Allocate 1GB of swap space
+INSTALL_ZSH=false           # (default false) Install 'Oh My Zsh'
+NOOP=                       # no-op for testing purposes
+# > TODO/FIX:
+# [DEBUG]=                  # (default undefined) Run installation in debug mode
 ```
 
 The installation takes a few minutes to complete.  
 Check if services are running:
 ```shell
 docker stack ls
+docker service ls
 ```
