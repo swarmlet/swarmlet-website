@@ -23,9 +23,7 @@ jobs:
 
     - name: Set release mode [develop]
       if: env.BRANCH == 'develop'
-      run: |
-        echo "::set-env name=SWARMLET_HOST::staging.$SWARMLET_HOST"
-        echo "::set-env name=SWARMLET_APP_NAME::$SWARMLET_APP_NAME-staging"
+      run: echo "::set-env name=SWARMLET_APP_NAME::$SWARMLET_APP_NAME-staging"
     
     - name: Install SSH key
       uses: shimataro/ssh-key-action@v1
