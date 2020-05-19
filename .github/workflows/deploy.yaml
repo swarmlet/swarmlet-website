@@ -25,10 +25,13 @@ jobs:
       run: |        
         REMOTE_URL=$SWARMLET_USER@$SWARMLET_HOST:$SWARMLET_APP_NAME
         cd $GITHUB_WORKSPACE
+        git checkout -b $SWARMLET_REMOTE_BRANCH
+        REMOTE_REF=$GITHUB_SHA:refs/heads/$SWARMLET_REMOTE_BRANCH
         git remote add swarm $REMOTE_URL
         GIT_COMMAND="git push swarm $SWARMLET_REMOTE_BRANCH"
         GIT_SSH_COMMAND="ssh -i $HOME/.ssh/id_rsa -F /dev/null -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" $GIT_COMMAND
 
+# git commit -m "initial commit" --allow-empty
 # REMOTE_REF=$GITHUB_SHA:refs/heads/$SWARMLET_REMOTE_BRANCH:master
 
 # ssh-keygen -y -f $HOME/.ssh/id_rsa > $HOME/.ssh/id_rsa.pub
