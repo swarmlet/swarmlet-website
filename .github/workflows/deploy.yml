@@ -21,9 +21,20 @@ jobs:
     - name: Set environment
       run: echo "::set-env name=BRANCH::$(echo ${GITHUB_REF##*/})"
 
-    - name: Set app name based on branch
+    - name: Set app name [staging]
       if: env.BRANCH == 'develop'
-      run: echo "::set-env name=SWARMLET_APP_NAME::$SWARMLET_APP_NAME-staging"
+      run: | 
+        cd $GITHUB_WORKSPACE
+        git checkout -b $BRANCH
+        git fetch --unshallow
+        echo "::set-env name=SWARMLET_APP_NAME::$SWARMLET_APP_NAME-staging"
+
+    - name: Set app name [production]
+      if: env.BRANCH == 'master'
+      run: | 
+        cd $GITHUB_WORKSPACE
+        git checkout $BRANCH
+        git fetch --unshallow
     
     - name: Install SSH key
       uses: shimataro/ssh-key-action@v1
@@ -34,9 +45,6 @@ jobs:
     - name: Deploy to swarm
       run: |
         REMOTE_URL=$SWARMLET_USER@$SWARMLET_HOST:$SWARMLET_APP_NAME
-        cd $GITHUB_WORKSPACE
-        git checkout $BRANCH
-        git fetch --unshallow
         git remote add swarm $REMOTE_URL
         GIT_COMMAND="git push swarm $SWARMLET_REMOTE_BRANCH"
         GIT_SSH_COMMAND="ssh -i $HOME/.ssh/id_rsa -F /dev/null -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" $GIT_COMMAND
