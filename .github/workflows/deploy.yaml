@@ -2,12 +2,14 @@ name: Deploy
 
 on:
   push:
-    branches: [develop]
+    branches:
+      - develop
+      - master
 
 env:
   SWARMLET_USER: git
-  SWARMLET_HOST: staging.swarmlet.dev
-  SWARMLET_APP_NAME: swarmlet-website-staging
+  SWARMLET_HOST: swarmlet.dev
+  SWARMLET_APP_NAME: swarmlet-website
   SWARMLET_REMOTE_BRANCH: master
 
 jobs:
@@ -15,11 +17,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+
+    - name: Set environment
+      run: echo "::set-env name=BRANCH::$(echo ${GITHUB_REF##*/})"
+
+    - name: Set release mode [develop]
+      if: env.BRANCH == 'develop'
+      run: |
+        echo "::set-env name=SWARMLET_HOST::staging.$SWARMLET_HOST"
+        echo "::set-env name=SWARMLET_APP_NAME::$SWARMLET_APP_NAME-staging"
+    
     - name: Install SSH key
       uses: shimataro/ssh-key-action@v1
       with:
         private-key: ${{ secrets.SSH_PRIVATE_KEY }}
         known-hosts: ${{ env.SWARMLET_HOST }}
+    
     - name: Deploy to swarm
       run: |
         REMOTE_URL=$SWARMLET_USER@$SWARMLET_HOST:$SWARMLET_APP_NAME
