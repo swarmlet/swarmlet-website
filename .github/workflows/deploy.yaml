@@ -2,13 +2,13 @@ name: Deploy
 
 on:
   push:
-    branches: [master]
+    branches: [develop]
 
 env:
   GITHUB_SHA: ${{ github.sha }}
   SWARMLET_USER: git
-  SWARMLET_HOST: swarmlet.dev
-  SWARMLET_APP_NAME: swarmlet-website
+  SWARMLET_HOST: staging.swarmlet.dev
+  SWARMLET_APP_NAME: swarmlet-website-staging
   SWARMLET_REMOTE_BRANCH: master
 
 jobs:
