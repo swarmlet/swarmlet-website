@@ -42,8 +42,8 @@ jobs:
       uses: rtCamp/action-slack-notify@v2.0.2
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_MESSAGE: "${{ env.SWARMLET_APP_NAME }} deployed:"
         SLACK_USERNAME: Github
         SLACK_ICON_EMOJI: ":swarmlet:"
-        SLACK_MESSAGE: "$SWARMLET_APP_NAME deployed:"
 
 
