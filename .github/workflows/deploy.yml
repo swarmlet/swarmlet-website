@@ -33,8 +33,17 @@ jobs:
     - name: Deploy to swarm
       run: |
         cd $GITHUB_WORKSPACE
-        git checkout $BRANCH
         git fetch --unshallow
         git remote add swarm $SWARMLET_USER@$SWARMLET_HOST:$SWARMLET_APP_NAME
         GIT_SSH_COMMAND="ssh -i $HOME/.ssh/id_rsa -F /dev/null -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" \
         git push -u swarm $BRANCH:master
+
+    - name: Slack notify
+      uses: rtCamp/action-slack-notify@v2.0.2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_TITLE: "${{ env.SWARMLET_APP_NAME }} deployed:"
+        SLACK_USERNAME: Swarmbot
+        SLACK_ICON_EMOJI: ":swarmlet:"
+
+
