@@ -28,7 +28,7 @@ jobs:
         echo $REMOTE_URL
         cd $GITHUB_WORKSPACE
         git remote add swarm $REMOTE_URL
-        REMOTE_REF=master
+        REMOTE_REF=HEAD:master
         GIT_COMMAND="git push swarm $REMOTE_REF"
         GIT_SSH_COMMAND="ssh -i $HOME/.ssh/id_rsa -F /dev/null -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" $GIT_COMMAND
 
