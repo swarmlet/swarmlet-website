@@ -17,12 +17,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Set environment and checkout
-      run: | 
-        echo "::set-env name=BRANCH::$(echo ${GITHUB_REF##*/})"
-        cd $GITHUB_WORKSPACE
-        git checkout $BRANCH
-        git fetch --unshallow
+    - name: Set environment
+      run: echo "::set-env name=BRANCH::$(echo ${GITHUB_REF##*/})"
 
     - name: Set app name [staging]
       if: env.BRANCH == 'develop'
@@ -36,6 +32,9 @@ jobs:
 
     - name: Deploy to swarm
       run: |
+        cd $GITHUB_WORKSPACE
+        git checkout $BRANCH
+        git fetch --unshallow
         git remote add swarm $SWARMLET_USER@$SWARMLET_HOST:$SWARMLET_APP_NAME
         GIT_SSH_COMMAND="ssh -i $HOME/.ssh/id_rsa -F /dev/null -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" \
         git push swarm master
