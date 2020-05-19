@@ -35,7 +35,7 @@ jobs:
       run: |
         REMOTE_URL=$SWARMLET_USER@$SWARMLET_HOST:$SWARMLET_APP_NAME
         cd $GITHUB_WORKSPACE
-        git checkout -b $SWARMLET_REMOTE_BRANCH
+        git checkout $BRANCH
         git fetch --unshallow
         git remote add swarm $REMOTE_URL
         GIT_COMMAND="git push swarm $SWARMLET_REMOTE_BRANCH"
