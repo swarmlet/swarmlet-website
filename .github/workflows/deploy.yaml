@@ -20,7 +20,6 @@ jobs:
       uses: shimataro/ssh-key-action@v1
       with:
         private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-        # public-key: ${{ secrets.SSH_PUBLIC_KEY }}
         known-hosts: ${{ env.SWARMLET_HOST }}
     - name: Deploy to swarm
       run: |        
@@ -28,7 +27,7 @@ jobs:
         echo $REMOTE_URL
         cd $GITHUB_WORKSPACE
         git remote add swarm $REMOTE_URL
-        REMOTE_REF=HEAD:master
+        REMOTE_REF=$GITHUB_SHA:refs/heads/$SWARMLET_REMOTE_BRANCH:master
         GIT_COMMAND="git push swarm $REMOTE_REF"
         GIT_SSH_COMMAND="ssh -i $HOME/.ssh/id_rsa -F /dev/null -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" $GIT_COMMAND
 
