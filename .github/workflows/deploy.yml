@@ -21,7 +21,7 @@ jobs:
     - name: Set environment
       run: echo "::set-env name=BRANCH::$(echo ${GITHUB_REF##*/})"
 
-    - name: Set release mode [develop]
+    - name: Set app name based on branch
       if: env.BRANCH == 'develop'
       run: echo "::set-env name=SWARMLET_APP_NAME::$SWARMLET_APP_NAME-staging"
     
