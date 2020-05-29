@@ -45,3 +45,5 @@ jobs:
         SLACK_TITLE: "${{ env.SWARMLET_APP_NAME }} deployed:"
         SLACK_USERNAME: Swarmbot
         SLACK_ICON_EMOJI: ":swarmlet:"
+
+
