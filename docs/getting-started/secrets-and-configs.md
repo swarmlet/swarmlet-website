@@ -1,6 +1,6 @@
 ---
-id: secrets-and-configurations
-title: Secrets and configurations
+id: secrets-and-configs
+title: Secrets and configs
 
 ---
 
