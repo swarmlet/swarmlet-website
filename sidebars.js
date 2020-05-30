@@ -5,6 +5,7 @@ module.exports = {
       'getting-started/installation',
       'getting-started/ssh-key-setup',
       'getting-started/deploying-applications',
+      'getting-started/registry',
       'getting-started/secrets-and-configs',
       'getting-started/modules-configuration',
       'getting-started/domain-configuration',

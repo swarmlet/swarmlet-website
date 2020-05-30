@@ -5,14 +5,14 @@ title: Secrets and configs
 ---
 
 ## Managing secrets and configs with Swarmlet
-Variables configured during installation will be stored using Docker configs and secrets.
-What are [configs](https://docs.docker.com/engine/swarm/configs/) and [secrets](https://docs.docker.com/engine/swarm/secrets/)?
-This way, we can use these values in swarm services.
-Secrets can be used by services only. Include secrets in the project `docker-compose.yml` file for example.
-Access the Swarmlet user config and secrets in your project by adding the following to your project compose file.
+Variables configured during installation will be stored in Docker [configs](https://docs.docker.com/engine/swarm/configs/) and [secrets](https://docs.docker.com/engine/swarm/secrets/). This enables usage of secret values in swarm services. Include secrets and/or configs in the project `docker-compose.yml` file to access them in your services. Secrets can be used by swarm services only. 
+- Configs are mounted at `/config-name` in the service container.
+- Secrets are mounted at `/run/secrets/secret-name`.
 
-### Secrets and configs
+## Secrets and configs
 ```yml
+version: '3.7'
+
 services:
   my-service:
     image: alpine
@@ -25,6 +25,8 @@ services:
         echo "Contents of /run/secrets/swarmlet-user-secrets"
         cat /run/secrets/swarmlet-user-secrets
     configs:
+      - swarmlet-core-config
+      - swarmlet-user-config
       - swarmlet-config
     secrets:
       - swarmlet-user-secrets
@@ -33,6 +35,10 @@ services:
       replicas: 1
 
 configs:
+  swarmlet-core-config:
+    external: true
+  swarmlet-user-config:
+    external: true
   swarmlet-config:
     external: true
 
@@ -42,18 +48,18 @@ secrets:
 ```
 
 ### Creating secrets
-These are different ways of creating Docker secrets. First, log in to a manager node and create a secret using:
+Log into a manager node and use `docker secret create` to create a new config.
 ```bash
-docker secret create my-secret "the secret"
-
 echo "the secret value" > /home/$USER/the-secret.txt
 docker secret create my-secret /home/$USER/the-secret.txt
 
 THE_SECRET="a secret value"
 echo $THE_SECRET | docker secret create my-secret -
 ```
-Edit your project Compose file.
+Example compose file:
 ```yml
+version: '3.7'
+
 services:
   my-service:
     image: alpine
@@ -68,36 +74,20 @@ secrets:
   my-secret:
     external: true
 ```
-### Configs
-```yml
-services:
-  my-service:
-    image: alpine
-    command: sh -c 'cat /swarmlet-config'
-    configs:
-      - swarmlet-config
-    deploy:
-      mode: replicated
-      replicas: 1
 
-configs:
-  swarmlet-config:
-    external: true
-```
-#### Creating configs
-These are different ways of creating Docker configs. First, log in to a manager node and create a config using:
+### Creating configs
+Log into a manager node and use `docker config create` to create a new config.
 ```bash
-# Different ways of creating a Docker config
-docker config create my-config "the config"
-
 echo "the config" > /home/$USER/the-config.txt
-docker secret create my-config /home/$USER/the-config.txt
+docker config create my-config /home/$USER/the-config.txt
 
 THE_CONFIG="a config"
-echo $THE_CONFIG | docker secret create my-config -
+echo $THE_CONFIG | docker config create my-config -
 ```
-Edit your project compose file.
+Example compose file:
 ```yml
+version: '3.7'
+
 services:
   my-service:
     image: alpine
