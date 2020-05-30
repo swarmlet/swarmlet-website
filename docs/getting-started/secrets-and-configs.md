@@ -1,15 +1,15 @@
 ---
-id: secrets-and-configurations
-title: Secrets and configurations
+id: secrets-and-configs
+title: Secrets and configs
 
 ---
 
 ## Managing secrets and configs with Swarmlet
-Variables configured during installation will be saved using Docker configs and secrets.
+Variables configured during installation will be stored using Docker configs and secrets.
 What are [configs](https://docs.docker.com/engine/swarm/configs/) and [secrets](https://docs.docker.com/engine/swarm/secrets/)?
-Using this approach, we can use these values in any swarm service.
-Secrets can only be used by services, by injecting them in the project `docker-compose.yml` file for example.
-You can use the Swarmlet user config and secrets in your project by adding the following to your project compose file.
+This way, we can use these values in swarm services.
+Secrets can be used by services only. Include secrets in the project `docker-compose.yml` file for example.
+Access the Swarmlet user config and secrets in your project by adding the following to your project compose file.
 
 ### Secrets and configs
 ```yml
@@ -43,7 +43,7 @@ secrets:
 
 ### Creating secrets
 These are different ways of creating Docker secrets. First, log in to a manager node and create a secret using:
-```sh
+```bash
 docker secret create my-secret "the secret"
 
 echo "the secret value" > /home/$USER/the-secret.txt
@@ -86,7 +86,7 @@ configs:
 ```
 #### Creating configs
 These are different ways of creating Docker configs. First, log in to a manager node and create a config using:
-```sh
+```bash
 # Different ways of creating a Docker config
 docker config create my-config "the config"
 
