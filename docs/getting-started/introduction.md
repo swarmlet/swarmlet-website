@@ -65,8 +65,8 @@ Since we're using `Dockerfile`'s and `docker-compose.yml` files in our projects 
 
 ## Getting started
 1. Create a new VPS running Ubuntu 18.04 x64 and log in as root
-1. Install Swarmlet (optionally [with some swap]() if your server has less than 2gb of memory)
-1. [Edit your SSH config]() to be able to use `ssh swarm` instead of `ssh root@123.23.12.123`
+1. Install Swarmlet (optionally [with some swap](/docs/getting-started/installation) if your server has less than 2gb of memory)
+1. [Edit your SSH config](/docs/getting-started/ssh-key-setup) to be able to use `ssh swarm` instead of `ssh root@123.23.12.123`
 1. Use an existing project, or clone one of the [examples](/docs/examples/static-site)
 1. Add a `docker-compose.yml` file in the root of your project: [example docker-compose.yml](https://github.com/swarmlet/swarmlet/blob/master/examples/basic-example/docker-compose.yml)
 1. Add a git remote: `git remote add swarm git@swarm:my-project`  
@@ -81,24 +81,30 @@ Since we're using `Dockerfile`'s and `docker-compose.yml` files in our projects 
 **Requirements**: Bash 4.0 or higher (run `bash --version`).  
 
 **[Full installation instructions can be found here](/docs/getting-started/installation)**  
+Make sure you have a (sub) domain available which is pointed to your server, this is necessary to access the included dashboards such as Swarmpit or Matomo.
 To install the latest version of Swarmlet, log in to your server as root and run:  
 ```shell
-# Quick installation:
-curl -fsSL https://get.swarmlet.dev | bash -s ROOT_DOMAIN=mydomain.com
+# Quick (interactive) installation:
+curl -fsSL https://get.swarmlet.dev | bash
 ```
-Or with [options](/docs/getting-started/installation):
+Or with [options](https://swarmlet.dev/docs/getting-started/installation):
 ```shell
-# Custom installation 
+# Headless (noninteractive) installation:
 curl -fsSL https://get.swarmlet.dev | bash -s \
-  ROOT_DOMAIN=dev.mydomain.com \
+  INSTALLATION_TYPE=noninteractive \
   INSTALL_ZSH=true \
-  CREATE_SWAP=true
+  CREATE_SWAP=true \
+  INSTALL_MODULES="matomo swarmpit" \
+  NEW_HOSTNAME=swarm-manager-1 \
+  SWARMLET_USERNAME=admin \
+  SWARMLET_PASSWORD=nicepassword \
+  ROOT_DOMAIN=dev.mydomain.com
 
 # Install a different branch
 BRANCH=develop
 curl -fsSL https://raw.githubusercontent.com/swarmlet/swarmlet/$BRANCH/install | bash -s \
-  ROOT_DOMAIN=dev.mydomain.com \
-  INSTALL_BRANCH=$BRANCH
+  INSTALL_BRANCH=$BRANCH \
+  INSTALLATION_TYPE=interactive
 ```
 The installation should take a few minutes to complete.  
 
