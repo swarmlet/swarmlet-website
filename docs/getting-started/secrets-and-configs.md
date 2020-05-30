@@ -5,11 +5,11 @@ title: Secrets and configs
 ---
 
 ## Managing secrets and configs with Swarmlet
-Variables configured during installation will be saved using Docker configs and secrets.
+Variables configured during installation will be stored using Docker configs and secrets.
 What are [configs](https://docs.docker.com/engine/swarm/configs/) and [secrets](https://docs.docker.com/engine/swarm/secrets/)?
-Using this approach, we can use these values in any swarm service.
-Secrets can only be used by services, by injecting them in the project `docker-compose.yml` file for example.
-You can use the Swarmlet user config and secrets in your project by adding the following to your project compose file.
+This way, we can use these values in swarm services.
+Secrets can be used by services only. Include secrets in the project `docker-compose.yml` file for example.
+Access the Swarmlet user config and secrets in your project by adding the following to your project compose file.
 
 ### Secrets and configs
 ```yml
