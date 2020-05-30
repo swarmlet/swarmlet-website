@@ -11,6 +11,8 @@ Variables configured during installation will be stored in Docker [configs](http
 
 ## Secrets and configs
 ```yml
+version: '3.7'
+
 services:
   my-service:
     image: alpine
@@ -23,6 +25,8 @@ services:
         echo "Contents of /run/secrets/swarmlet-user-secrets"
         cat /run/secrets/swarmlet-user-secrets
     configs:
+      - swarmlet-core-config
+      - swarmlet-user-config
       - swarmlet-config
     secrets:
       - swarmlet-user-secrets
@@ -31,6 +35,10 @@ services:
       replicas: 1
 
 configs:
+  swarmlet-core-config:
+    external: true
+  swarmlet-user-config:
+    external: true
   swarmlet-config:
     external: true
 
@@ -50,6 +58,8 @@ echo $THE_SECRET | docker secret create my-secret -
 ```
 Example compose file:
 ```yml
+version: '3.7'
+
 services:
   my-service:
     image: alpine
@@ -65,22 +75,6 @@ secrets:
     external: true
 ```
 
-## Configs
-```yml
-services:
-  my-service:
-    image: alpine
-    command: sh -c 'cat /swarmlet-config'
-    configs:
-      - swarmlet-config
-    deploy:
-      mode: replicated
-      replicas: 1
-
-configs:
-  swarmlet-config:
-    external: true
-```
 ### Creating configs
 Log into a manager node and use `docker config create` to create a new config.
 ```bash
@@ -92,6 +86,8 @@ echo $THE_CONFIG | docker config create my-config -
 ```
 Example compose file:
 ```yml
+version: '3.7'
+
 services:
   my-service:
     image: alpine
