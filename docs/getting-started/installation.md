@@ -38,16 +38,16 @@ curl -fsSL https://raw.githubusercontent.com/swarmlet/swarmlet/$BRANCH/install |
 The installation should take a few minutes to complete.
 ### Installation options
 ```shell
-[INSTALLATION_TYPE]=interactive  # (default interactive, options: interactive|noninteractive) Use CLI wizard to setup Swarmlet
-[INSTALL_BRANCH]=master          # (default master) The default branch to install
-[SWARMLET_USERNAME]=swarmlet     # (default swarmlet) Used for authentication with the registry and web services / dashboards
-[SWARMLET_PASSWORD]=swarmlet     # (default swarmlet) Used for authentication with the registry and web services / dashboards
-[SSH_AUTHORIZED_KEYS]=/root/.ssh/authorized_keys # (default root) The authorized SSH keys for git deployments
-[NEW_HOSTNAME]=$HOSTNAME         # (default $HOSTNAME) Optional: set a new hostname
-[ROOT_DOMAIN]=                   # (default undefined) The domain to use for deployment of included services
-[INSTALL_MODULES]=               # (default undefined, options: matomo|swarmpit|swarmprom|portainer) Seperate by space and wrap in quotes to install multiple modules
-[CREATE_SWAP]=false              # (default false) Allocate 1GB of swap space
-[INSTALL_ZSH]=false              # (default false) Install 'Oh My Zsh'
+INSTALLATION_TYPE=interactive  # (default interactive, options: interactive|noninteractive) Use CLI wizard to setup Swarmlet
+INSTALL_BRANCH=master          # (default master) The default branch to install
+SWARMLET_USERNAME=swarmlet     # (default swarmlet) Used for authentication with the registry and web services / dashboards
+SWARMLET_PASSWORD=swarmlet     # (default swarmlet) Used for authentication with the registry and web services / dashboards
+SSH_AUTHORIZED_KEYS=/root/.ssh/authorized_keys # (default root) The authorized SSH keys for git deployments
+NEW_HOSTNAME=$HOSTNAME         # (default $HOSTNAME) Optional: set a new hostname
+ROOT_DOMAIN=                   # (default undefined) The domain to use for deployment of included services
+INSTALL_MODULES=               # (default undefined, options: matomo|swarmpit|swarmprom|portainer) Seperate by space and wrap in quotes to install multiple modules
+CREATE_SWAP=false              # (default false) Allocate 1GB of swap space
+INSTALL_ZSH=false              # (default false) Install 'Oh My Zsh'
 ```
 
 The installation takes a few minutes to complete.  
