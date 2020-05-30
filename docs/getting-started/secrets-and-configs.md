@@ -43,7 +43,7 @@ secrets:
 
 ### Creating secrets
 These are different ways of creating Docker secrets. First, log in to a manager node and create a secret using:
-```sh
+```bash
 docker secret create my-secret "the secret"
 
 echo "the secret value" > /home/$USER/the-secret.txt
@@ -86,7 +86,7 @@ configs:
 ```
 #### Creating configs
 These are different ways of creating Docker configs. First, log in to a manager node and create a config using:
-```sh
+```bash
 # Different ways of creating a Docker config
 docker config create my-config "the config"
 
