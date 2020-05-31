@@ -44,7 +44,7 @@ The installation should take a few minutes to complete.
 ```shell
 INSTALLATION_TYPE=interactive  # (default interactive, options: interactive|noninteractive) Use CLI wizard to setup Swarmlet
 INSTALL_BRANCH=master          # (default master) The default branch to install
-SWARMLET_USERNAME=swarmlet     # (default swarmlet) Used for authentication with the registry and web services / dashboards
+SWARMLET_USERNAME=$USER        # (default $USER) Used for authentication with the registry and web services / dashboards
 SWARMLET_PASSWORD=swarmlet     # (default swarmlet) Used for authentication with the registry and web services / dashboards
 SSH_AUTHORIZED_KEYS=$HOME/.ssh/authorized_keys # (default $HOME/.ssh/) The authorized SSH keys for git deployments
 NEW_HOSTNAME=$HOSTNAME         # (default $HOSTNAME) Optional: set a new hostname
