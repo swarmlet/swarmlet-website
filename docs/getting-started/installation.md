@@ -13,11 +13,10 @@ Or propose to [edit this page](https://github.com/swarmlet/swarmlet-website/edit
 Thanks!
 
 - **Requirements**: Bash 4.0 or higher (run `bash --version`)  
-### Quick installation
+### Quick interactive installation
 Make sure you have a (sub) domain available which is pointed to your server, this is necessary to access the included dashboards such as Swarmpit or Matomo.
 To install the latest version of Swarmlet, log in to your server as root and run:  
 ```shell
-# Quick (interactive) installation:
 curl -fsSL https://get.swarmlet.dev | bash
 ```
 ### Headless installation
