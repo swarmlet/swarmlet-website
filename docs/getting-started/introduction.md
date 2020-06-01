@@ -112,11 +112,12 @@ The installation should take a few minutes to complete.
 ## Examples
 
 Swarmlet includes various examples of services that you can deploy to your server cluster with a simple `git push`.  
+- [swarmlet-website - The swarmlet.dev website](https://github.com/swarmlet/swarmlet-website)
+- [get-swarmlet - The get.swarmlet.dev install script](/docs/examples/get-swarmlet)
 - [Basic example - Static site](/docs/examples/static-site)
 - [Basic example - Python web server + Redis](/docs/examples/python-redis)
 - [Moderate example - NGINX + React app + Node.js API](/docs/examples/nginx-react-node)
 - (FIX) [Advanced example - NGINX + React app + Node.js API + CMS + staging/production](/docs/examples/nginx-react-node-cms)
-- [get-swarmlet](/docs/examples/get-swarmlet) (the app serving the Swarmlet install script at [get.swarmlet.dev](https://get.swarmlet.dev))
 - (FIX) [GitLab CE](/docs/examples/gitlab-ce) (self-hosted)
 - (FIX) [GitLab Runner](/docs/examples/gitlab-runner) (self-hosted)
 - (TODO) [HAProxy](/docs/examples/haproxy) (Replacing Traefik with HAProxy)
