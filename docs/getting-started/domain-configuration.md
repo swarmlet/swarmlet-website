@@ -6,15 +6,70 @@ title: Domain configuration
 
 ## Getting started
 
-To access an included service like Swarmpit, clone it's repository from the swarm, edit the `.env` file and deploy the application again with a `git push`.  
-See how configure `~/.ssh/config` to be able to use `git@swarm:app-name` instead of `git@123.123.123.123:app-name` on the [SSH key setup page](/docs/getting-started/ssh-key-setup).
+Add a `label` under the `deploy` key in your project compose file to expose your service on the desired domain. Traefik will pick up any changes to updating services so whenever you redeploy, Traefik will try to create SSL certificates using Let's Encrypt if they don't exist already.  
+
+Compose files are compatible with environment variables. Place a `.env` file next to the `docker-compose.yml` project file to use the environment variables.
+
+### Example project compose file
+*`.env`*
 ```bash
-# from you local machine
-git clone git@swarm:swarmpit
-cd swarmpit
-nano .env  # change DOMAIN=${1:-$HOSTNAME} to DOMAIN=yourdomain.com
+THE_DOMAIN=my-website.com
+```
+*`docker-compose.yml`*
+```yml {18,22}
+version: '3.7'
+
+services:
+  my-website-frontend:
+    build: .
+    image: ${SWARMLET_REGISTRY}/my-website-frontend
+    networks:
+      - traefik-public
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels:
+        - traefik.enable=true
+        - traefik.tags=traefik-public
+        - traefik.docker.network=traefik-public
+        - traefik.swarmlet-registry.enable=true
+        - traefik.swarmlet-registry.port=5000
+        - traefik.swarmlet-registry.frontend.rule=Host:${THE_DOMAIN}
+        - traefik.swarmlet-registry.frontend.entryPoints=http,https
+        - traefik.swarmlet-registry.frontend.passHostHeader=true
+        - traefik.swarmlet-registry.frontend.headers.SSLRedirect=true
+        - traefik.swarmlet-registry.frontend.headers.SSLHost=${THE_DOMAIN}
+        - traefik.swarmlet-registry.frontend.headers.STSIncludeSubdomains=true
+        - traefik.swarmlet-registry.frontend.headers.STSPreload=true
+
+networks:
+  traefik-public:
+    external: true
+```
+
+### Updating a domain
+Maybe you want to host the registry on a different domain, instead of the default `registry.${ROOT_DOMAIN}`. To update any module, simply `git pull` the modules' repository, edit the configuration, commit and push to redeploy. Another option would be to use a service like Swarmpit or Portainer to redeploy using a web interface.  
+
+Example: Changing the exposed internal registry URL to https://custom-registry.my-domain.com
+```bash
+git clone git@swarm:registry
+cd registry
+
+### edit '.env' and 'docker-compose.yml'
+
 git add . && git commit -m 'update'
 git push origin master
+
+# $ ...
+# $ remote:  Stack deployed:
+# $ remote: [registry] — https://custom-registry.my-domain.com
+```
+Try it out:
+```bash
+docker login custom-registry.my-domain.com
+$ Username: <provide username configured during installation>
+$ Password: <provide password configured during installation>
+$ Login Succeeded
 ```
 
 <!-- Prerequisites:  
