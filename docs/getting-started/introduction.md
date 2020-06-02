@@ -15,7 +15,9 @@ Swarmlet uses these to provide automatic SSL, load balancing, analytics and vari
 
 This project is aimed at developers that want to experiment with application deployment in a flexible multi-server / high-availability environment. The goal is to be able to set up your own swarm and deploy your app(s) in minutes.  
 
-The project GitHub repository can be found at [https://github.com/swarmlet/swarmlet](https://github.com/swarmlet/swarmlet)  
+- The project GitHub repository can be found at [github.com/swarmlet/swarmlet](https://github.com/swarmlet/swarmlet)  
+- The Swarmlet project boards are located at [github.com/orgs/swarmlet/projects](https://github.com/orgs/swarmlet/projects)  
+- Join the discussion on Slack using [this invite link](https://join.slack.com/t/swarmlet/shared_invite/zt-eki9qa53-9FdvUik604rncp61dbawkQ)  
 
 ### Demo
 
