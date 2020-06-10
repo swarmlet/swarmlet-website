@@ -28,4 +28,5 @@ Host swarm
     User root
     IdentityFile ~/.ssh/id_rsa_swarm # Optional
 ```
-Now `ssh root@123.23.12.123` becomes `ssh swarm`.  
+
+:::important Now `ssh root@123.23.12.123` becomes `ssh swarm` :::
