@@ -1,10 +1,10 @@
-import React from 'react';
-import classnames from 'classnames';
-import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import styles from './styles.module.css';
+import React from "react";
+import classnames from "classnames";
+import Layout from "@theme/Layout";
+import Link from "@docusaurus/Link";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import styles from "./styles.module.scss";
 
 const features = [
   {
@@ -22,7 +22,7 @@ const features = [
         Install Swarmlet on a single server and try it out by deploying an app.
         Add additional servers to provide more resources for your apps.
       </>
-    )
+    ),
   },
   {
     title: (
@@ -39,7 +39,7 @@ const features = [
         Swarmlet uses Traefik, Consul and Let's Encrypt to provide automatic SSL
         and load balancing on your apps.
       </>
-    )
+    ),
   },
   {
     title: (
@@ -53,14 +53,17 @@ const features = [
     imageUrl: "img/undraw_all_the_data.svg",
     description: (
       <>
-        Metrics tools, analytics and dashboards such as Matamo, Swarmpit, Traefik, Grafana are
-        included by default. With easy Slack integration.
+        Metrics tools, analytics and dashboards such as Matamo, Swarmpit,
+        Traefik, Grafana are included by default. With easy Slack integration.
       </>
-    )
+    ),
   },
   {
     title: (
-      <Link className="featureLink" to="docs/getting-started/deploying-applications#example-application-setup">
+      <Link
+        className="featureLink"
+        to="docs/getting-started/deploying-applications#example-application-setup"
+      >
         Configure app domains, backends and deployment in a single file.
       </Link>
     ),
@@ -70,7 +73,7 @@ const features = [
         Swarmlet reads your application stack configuration from a
         docker-compose.yml file and deploys services accordingly.
       </>
-    )
+    ),
   },
   {
     title: (
@@ -81,10 +84,11 @@ const features = [
     imageUrl: "img/undraw_container_ship.svg",
     description: (
       <>
-        Swarmlet is nothing more than a thin wrapper around Docker commands.
-        It builds applications, stores them in a local or custom registry and deploys them on your swarm.
+        Swarmlet is nothing more than a thin wrapper around Docker commands. It
+        builds applications, stores them in a local or custom registry and
+        deploys them on your swarm.
       </>
-    )
+    ),
   },
   {
     title: (
@@ -98,14 +102,14 @@ const features = [
         Host GitLab CE on your swarm and attach GitLab Runners running on
         dedicated worker nodes for self-hosted CI/CD.
       </>
-    )
+    ),
   },
 ];
 
-function Feature({imageUrl, title, description}) {
+function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div className={classnames('col col--4', styles.feature)}>
+    <div className={classnames("col col--4", styles.feature)}>
       {imgUrl && (
         <div className="text--center">
           <img className={styles.featureImage} src={imgUrl} alt={title} />
@@ -119,22 +123,24 @@ function Feature({imageUrl, title, description}) {
 
 function Home() {
   const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
+  const { siteConfig = {} } = context;
   return (
     <Layout
       title={`Home`}
-      description="A self-hosted, open-source Platform as a Service that enables easy swarm deployments, load balancing, automatic SSL, metrics, analytics and more.">
-      <header className={classnames('hero hero--primary', styles.heroBanner)}>
+      description="A self-hosted, open-source Platform as a Service that enables easy swarm deployments, load balancing, automatic SSL, metrics, analytics and more."
+    >
+      <header className={classnames("hero hero--primary", styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
             <Link
               className={classnames(
-                'button button--outline button--secondary button--lg get-started',
-                styles.getStarted,
+                "button button--outline button--secondary button--lg get-started",
+                styles.getStarted
               )}
-              to={useBaseUrl('docs/getting-started/introduction')}>
+              to={useBaseUrl("docs/getting-started/introduction")}
+            >
               Get Started
             </Link>
           </div>
