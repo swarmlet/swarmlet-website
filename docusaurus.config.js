@@ -124,6 +124,7 @@ module.exports = {
     algolia: {
       apiKey: "e8dcc4acaf22c600f8e20738fb2b5915",
       indexName: "swarmlet",
+      appId: "FAVSNXVQZ4",
     },
     navbar: {
       title: SWARMLET,
