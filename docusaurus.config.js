@@ -34,9 +34,11 @@ module.exports = {
     // Community plugins
     "docusaurus-plugin-sass",
     [
-      "@docusaurus/plugin-client-redirects",
+      "@docusaurus/plugin-sitemap",
       {
-        fromExtensions: ["html"],
+        cacheTime: 600 * 1000, // 600 sec - cache purge period
+        changefreq: "weekly",
+        priority: 0.5,
       },
     ],
     // Custom plugins
@@ -119,6 +121,10 @@ module.exports = {
     ],
   ],
   themeConfig: {
+    algolia: {
+      apiKey: "e8dcc4acaf22c600f8e20738fb2b5915",
+      indexName: "swarmlet",
+    },
     navbar: {
       title: SWARMLET,
       logo: {
@@ -195,10 +201,6 @@ module.exports = {
         },
       ],
       copyright: `${SWARMLET} - ${new Date().getFullYear()}`,
-      algolia: {
-        apiKey: "e8dcc4acaf22c600f8e20738fb2b5915",
-        indexName: "swarmlet",
-      },
     },
   },
   presets: [
@@ -215,4 +217,5 @@ module.exports = {
       },
     ],
   ],
+  themes: ["@docusaurus/theme-search-algolia"],
 };

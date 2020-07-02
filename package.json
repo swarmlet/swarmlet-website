@@ -11,9 +11,11 @@
   "dependencies": {
     "@docusaurus/core": "^2.0.0-alpha.48",
     "@docusaurus/plugin-client-redirects": "^2.0.0-alpha.58",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.48",
-    "docusaurus-plugin-sass": "^0.1.9",
+    "@docusaurus/plugin-sitemap": "^2.0.0-alpha.37",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.58",
+    "@docusaurus/theme-search-algolia": "^2.0.0-alpha.32",
     "classnames": "^2.2.6",
+    "docusaurus-plugin-sass": "^0.1.9",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
