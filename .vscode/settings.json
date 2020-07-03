@@ -2,6 +2,7 @@
   "conventionalCommits.scopes": [
     "search",
     "actions",
-    "styling"
+    "styling",
+    "seo"
   ]
 }
