@@ -1,6 +1,7 @@
 {
   "conventionalCommits.scopes": [
     "search",
-    "actions"
+    "actions",
+    "styling"
   ]
 }
