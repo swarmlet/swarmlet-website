@@ -36,7 +36,7 @@ module.exports = {
     [
       "@docusaurus/plugin-sitemap",
       {
-        cacheTime: 600 * 1000, // 600 sec - cache purge period
+        cacheTime: 600 * 1000,
         changefreq: "weekly",
         priority: 0.5,
       },
@@ -134,7 +134,7 @@ module.exports = {
       },
       links: [
         {
-          to: "docs/getting-started/introduction",
+          to: "docs",
           activeBasePath: "docs",
           label: "Docs",
           position: "left",
@@ -154,7 +154,7 @@ module.exports = {
           items: [
             {
               label: "Introduction",
-              to: "docs/getting-started/introduction",
+              to: "docs",
             },
             {
               label: "Installation",
@@ -211,6 +211,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: "https://github.com/swarmlet/swarmlet-website/edit/master/",
+          homePageId: "getting-started/introduction",
         },
         theme: {
           customCss: require.resolve("./src/scss/custom.scss"),

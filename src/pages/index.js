@@ -77,7 +77,7 @@ const features = [
   },
   {
     title: (
-      <Link className="featureLink" to="docs/getting-started/introduction">
+      <Link className="featureLink" to="docs">
         Just a thin wrapper around Docker and Docker Compose
       </Link>
     ),
@@ -139,7 +139,7 @@ function Home() {
                 "button button--outline button--secondary button--lg get-started",
                 styles.getStarted
               )}
-              to={useBaseUrl("docs/getting-started/introduction")}
+              to={useBaseUrl("docs")}
             >
               Get Started
             </Link>
