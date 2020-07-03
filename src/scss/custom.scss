@@ -36,23 +36,35 @@ a.featureLink {
   color: black !important;
 }
 
-[data-theme="dark"] a.featureLink {
-  color: white !important;
-}
-
 .hero.hero--primary.heroBanner_src-pages- {
   box-shadow: var(--ifm-color-primary-darker) 0 0 10px 0 inset;
   mix-blend-mode: multiply;
 }
 
+[data-theme="dark"] {
+  .hero__title {
+    color: white !important;
+  }
+  a.featureLink {
+    color: white !important;
+  }
+  .hero.hero--primary.heroBanner_src-pages- {
+    box-shadow: var(--ifm-color-primary-darker) 0 0 10px 0 inset;
+    mix-blend-mode: initial;
+  }
+  .hero__subtitle {
+    color: white !important;
+  }
+}
+
 .hero.hero--primary > div:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 80%;
   height: 100%;
-  background-image: url('/img/overlay.jpg') !important;
+  background-image: url("/img/overlay.jpg") !important;
   background-position: left top -75px !important;
   background-repeat: no-repeat !important;
   background-size: 110% !important;
