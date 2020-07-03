@@ -2,6 +2,7 @@ const path = require("path");
 
 const SWARMLET = "Swarmlet";
 const SWARMLET_URL = "https://swarmlet.dev";
+const SWARMLET_GITHUB = "https://github.com/swarmlet";
 const SWARMLET_TAGLINE = "A self-hosted, open-source Platform as a Service";
 const SWARMLET_KEYWORDS = [
   "swarmlet",
@@ -25,11 +26,11 @@ module.exports = {
   title: SWARMLET,
   tagline: SWARMLET_TAGLINE,
   organizationName: SWARMLET,
+  projectName: SWARMLET,
   url: SWARMLET_URL,
   baseUrl: "/",
   favicon: "favicon.ico",
-  projectName: SWARMLET,
-  scripts: [`${SWARMLET_URL}/matomo.js`, `${SWARMLET_URL}/player.js`],
+  scripts: [`/matomo.js`, `/player.js`],
   plugins: [
     // Community plugins
     "docusaurus-plugin-sass",
@@ -140,7 +141,7 @@ module.exports = {
           position: "left",
         },
         {
-          href: "https://github.com/swarmlet/swarmlet",
+          href: `${SWARMLET_GITHUB}/swarmlet`,
           label: "GitHub",
           position: "left",
         },
@@ -192,7 +193,11 @@ module.exports = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/swarmlet/swarmlet",
+              href: `${SWARMLET_GITHUB}/swarmlet`,
+            },
+            {
+              label: "Projects",
+              href: "https://github.com/orgs/swarmlet/projects",
             },
             {
               label: "Stack Overflow",
@@ -210,7 +215,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/swarmlet/swarmlet-website/edit/master/",
+          editUrl: `${SWARMLET_GITHUB}/swarmlet-website/edit/master/`,
           homePageId: "getting-started/introduction",
         },
         theme: {
@@ -219,5 +224,5 @@ module.exports = {
       },
     ],
   ],
-  themes: ["@docusaurus/theme-search-algolia"],
+  themes: ["@docusaurus/theme-classic", "@docusaurus/theme-search-algolia"],
 };
