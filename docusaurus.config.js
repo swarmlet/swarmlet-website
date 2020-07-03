@@ -93,7 +93,7 @@ module.exports = {
             tagName: "meta",
             attributes: {
               property: "og:image",
-              content: "img/og-image.png",
+              content: `${SWARMLET_URL.replace("https:", "")}/img/og-image.jpg`,
             },
           },
           {
