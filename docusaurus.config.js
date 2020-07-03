@@ -123,7 +123,7 @@ module.exports = {
   themeConfig: {
     algolia: {
       apiKey: "e8dcc4acaf22c600f8e20738fb2b5915",
-      indexName: "swarmlet",
+      indexName: "docs-staging",
       appId: "FAVSNXVQZ4",
     },
     navbar: {
