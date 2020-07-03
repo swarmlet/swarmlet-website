@@ -50,8 +50,8 @@ secrets:
 ### Creating secrets
 Log into a manager node and use `docker secret create` to create a new config.
 ```bash
-echo "the secret value" > /home/$USER/the-secret.txt
-docker secret create my-secret /home/$USER/the-secret.txt
+echo "the secret value" > $HOME/the-secret.txt
+docker secret create my-secret $HOME/the-secret.txt
 
 THE_SECRET="a secret value"
 echo $THE_SECRET | docker secret create my-secret -
@@ -78,8 +78,8 @@ secrets:
 ### Creating configs
 Log into a manager node and use `docker config create` to create a new config.
 ```bash
-echo "the config" > /home/$USER/the-config.txt
-docker config create my-config /home/$USER/the-config.txt
+echo "the config" > $HOME/the-config.txt
+docker config create my-config $HOME/the-config.txt
 
 THE_CONFIG="a config"
 echo $THE_CONFIG | docker config create my-config -
