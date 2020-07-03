@@ -5,6 +5,10 @@ on:
     branches:
       - develop
       - master
+  pull_request:
+    branches:
+      - develop
+      - master
 
 env:
   SWARMLET_USER: git
@@ -15,35 +19,33 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Set environment
-      run: echo "::set-env name=BRANCH::$(echo ${GITHUB_REF##*/})"
+      - name: Set environment
+        run: echo "::set-env name=BRANCH::$(echo ${GITHUB_REF##*/})"
 
-    - name: Set app name [staging]
-      if: env.BRANCH == 'develop'
-      run: echo "::set-env name=SWARMLET_APP_NAME::$SWARMLET_APP_NAME-staging"
+      - name: Set app name [staging]
+        if: env.BRANCH == 'develop'
+        run: echo "::set-env name=SWARMLET_APP_NAME::$SWARMLET_APP_NAME-staging"
 
-    - name: Install SSH key
-      uses: shimataro/ssh-key-action@v1
-      with:
-        private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-        known-hosts: ${{ env.SWARMLET_HOST }}
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v1
+        with:
+          private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known-hosts: ${{ env.SWARMLET_HOST }}
 
-    - name: Deploy to swarm
-      run: |
-        cd $GITHUB_WORKSPACE
-        git fetch --unshallow
-        git remote add swarm $SWARMLET_USER@$SWARMLET_HOST:$SWARMLET_APP_NAME
-        GIT_SSH_COMMAND="ssh -i $HOME/.ssh/id_rsa -F /dev/null -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" \
-        git push -u swarm $BRANCH:master
+      - name: Deploy to swarm
+        run: |
+          cd $GITHUB_WORKSPACE
+          git fetch --unshallow
+          git remote add swarm $SWARMLET_USER@$SWARMLET_HOST:$SWARMLET_APP_NAME
+          GIT_SSH_COMMAND="ssh -i $HOME/.ssh/id_rsa -F /dev/null -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" \
+          git push -u swarm $BRANCH:master
 
-    - name: Slack notify
-      uses: rtCamp/action-slack-notify@v2.0.2
-      env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-        SLACK_TITLE: "${{ env.SWARMLET_APP_NAME }} deployed:"
-        SLACK_USERNAME: Swarmbot
-        SLACK_ICON_EMOJI: ":swarmlet:"
-
-
+      - name: Slack notify
+        uses: rtCamp/action-slack-notify@v2.0.2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_TITLE: "${{ env.SWARMLET_APP_NAME }} deployed:"
+          SLACK_USERNAME: Swarmbot
+          SLACK_ICON_EMOJI: ":swarmlet:"
