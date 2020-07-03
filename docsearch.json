@@ -1,0 +1,17 @@
+{
+  "start_urls": ["https://staging.swarmlet.dev/docs"],
+  "index_name": "docs-staging",
+  "selectors": {
+    "lvl0": "#__docusaurus header h1",
+    "lvl1": "#__docusaurus article h2",
+    "lvl2": "#__docusaurus section h3",
+    "lvl3": "#__docusaurus section h4",
+    "lvl4": "#__docusaurus section h5",
+    "lvl5": "#__docusaurus section h6",
+    "text": "#__docusaurus header p,#__docusaurus section p,#__docusaurus section ol,#__docusaurus div.prism-code"
+  },
+  "selectors_exclude": [".hash-link"],
+  "stop_urls": ["/blob", ".+/docs.*/docs", "#.+"],
+  "js_render": true,
+  "use_anchors": true
+}
