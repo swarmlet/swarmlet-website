@@ -1,40 +1,36 @@
-module.exports = {
-  sidebar: {
-    'Getting Started': [
-      'getting-started/introduction',
-      'getting-started/installation',
-      'getting-started/ssh-key-setup',
-      'getting-started/deploying-applications',
-      'getting-started/registry',
-      'getting-started/environment-variables',
-      'getting-started/secrets-and-configs',
-      'getting-started/modules-configuration',
-      'getting-started/domain-configuration',
-      'getting-started/automatic-ssl-and-load-balancing',
-      'getting-started/metrics-and-dashboards',
+module.exports={
+  "sidebar": {
+    "Getting Started": [
+      "getting-started/introduction",
+      "getting-started/installation",
+      "getting-started/ssh-key-setup",
+      "getting-started/deploying-applications",
+      "getting-started/registry",
+      "getting-started/environment-variables",
+      "getting-started/secrets-and-configs",
+      "getting-started/modules-configuration",
+      "getting-started/domain-configuration",
+      "getting-started/automatic-ssl-and-load-balancing",
+      "getting-started/metrics-and-dashboards"
     ],
-    'Deployment': [
-      'deployment/how-it-works',
+    "Deployment": [
+      "deployment/how-it-works"
     ],
-    'Swarm Managment': [
-      'swarm-management/managing-swarm-nodes',
+    "Swarm Managment": [
+      "swarm-management/managing-swarm-nodes"
     ],
-    'Services': [],
-    'Configuration': [],
-    'Networking': [],
-    'Development': [],
-    'Examples': [
-      'examples/static-site',
-      'examples/python-redis',
-      'examples/nginx-react-node',
-      'examples/nginx-react-node-cms',
-      'examples/get-swarmlet',
-      'examples/gitlab-ce',
-      'examples/gitlab-runner',
-      'examples/haproxy',
+    "Services": [],
+    "Configuration": [],
+    "Networking": [],
+    "Development": [],
+    "Examples": [
+      "examples/basic-example",
+      "examples/nginx-react-node-api",
+      "examples/portainer-edge",
+      "examples/python-redis"
     ],
-    'Temp': [
-      'getting-started/styleguide',
-    ],
+    "Temp": [
+      "getting-started/styleguide"
+    ]
   }
-};
+}
