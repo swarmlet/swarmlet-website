@@ -50,17 +50,17 @@ module.exports = {
       },
     ],
     // Custom plugins
-    [
-      path.resolve(__dirname, "plugins/fetch-external-docs/src/index.js"),
-      {
-        tmpDir: "/tmp/swarmlet",
-        repoUrl: SWARMLET_REPO_URL,
-        remoteUrl: SWARMLET_REMOTE_URL,
-        sidebarContent: require("./sidebars.js"),
-        sidebarPath: path.resolve(__dirname, "sidebars.js"),
-        targetPath: path.resolve(__dirname, "docs/examples"),
-      },
-    ],
+    // [
+    //   path.resolve(__dirname, "plugins/fetch-external-docs/src/index.js"),
+    //   {
+    //     tmpDir: "/tmp/swarmlet",
+    //     repoUrl: SWARMLET_REPO_URL,
+    //     remoteUrl: SWARMLET_REMOTE_URL,
+    //     sidebarContent: require("./sidebars.js"),
+    //     sidebarPath: path.resolve(__dirname, "sidebars.js"),
+    //     targetPath: path.resolve(__dirname, "docs/examples"),
+    //   },
+    // ],
     [
       path.resolve(__dirname, "plugins/inject-html-tags/src/index.js"),
       {
