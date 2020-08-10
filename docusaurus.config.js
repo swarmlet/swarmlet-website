@@ -140,11 +140,11 @@ module.exports = {
     ],
   ],
   themeConfig: {
-    // algolia: {
-    //   apiKey: "e8dcc4acaf22c600f8e20738fb2b5915",
-    //   indexName: "docs-staging",
-    //   appId: "FAVSNXVQZ4",
-    // },
+//     algolia: {
+//       apiKey: "e8dcc4acaf22c600f8e20738fb2b5915",
+//       indexName: "docs-production",
+//       appId: "FAVSNXVQZ4",
+//     },
     navbar: {
       title: SWARMLET,
       logo: {

@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   website:
-    image: ${SWARMLET_REGISTRY}/swarmlet-website-staging
+    image: ${SWARMLET_REGISTRY}/swarmlet-website
     build: .
     networks:
       - traefik-public
@@ -13,15 +13,15 @@ services:
         - traefik.enable=true
         - traefik.tags=traefik-public
         - traefik.docker.network=traefik-public
-        - traefik.swarmlet-website-staging.enable=true
-        - traefik.swarmlet-website-staging.port=80
-        - traefik.swarmlet-website-staging.frontend.rule=Host:${DOMAIN}
-        - traefik.swarmlet-website-staging.frontend.entryPoints=http,https
-        - traefik.swarmlet-website-staging.frontend.passHostHeader=true
-        - traefik.swarmlet-website-staging.frontend.headers.SSLRedirect=true
-        - traefik.swarmlet-website-staging.frontend.headers.SSLHost=${DOMAIN}
-        - traefik.swarmlet-website-staging.frontend.headers.STSIncludeSubdomains=true
-        - traefik.swarmlet-website-staging.frontend.headers.STSPreload=true
+        - traefik.swarmlet-website.enable=true
+        - traefik.swarmlet-website.port=80
+        - traefik.swarmlet-website.frontend.rule=Host:${DOMAIN}
+        - traefik.swarmlet-website.frontend.entryPoints=http,https
+        - traefik.swarmlet-website.frontend.passHostHeader=true
+        - traefik.swarmlet-website.frontend.headers.SSLRedirect=true
+        - traefik.swarmlet-website.frontend.headers.SSLHost=${DOMAIN}
+        - traefik.swarmlet-website.frontend.headers.STSIncludeSubdomains=true
+        - traefik.swarmlet-website.frontend.headers.STSPreload=true
 
 networks:
   traefik-public:
