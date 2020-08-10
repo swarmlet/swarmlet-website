@@ -6,16 +6,6 @@ module.exports = (context, { headTags }) => ({
         tagName,
         attributes,
       })),
-      // preBodyTags: [
-      //   {
-      //     tagName: 'script',
-      //     attributes: {
-      //       charset: 'utf-8',
-      //       src: '/noflash.js',
-      //     },
-      //   },
-      // ],
-      // postBodyTags: [`<div> This is post body </div>`],
     };
   },
 });

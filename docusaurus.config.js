@@ -1,9 +1,10 @@
 const path = require("path");
 
 const SWARMLET = "Swarmlet";
-const SWARMLET_URL = "https://swarmlet.dev";
-const SWARMLET_GITHUB = "https://github.com/swarmlet";
 const SWARMLET_TAGLINE = "A self-hosted, open-source Platform as a Service";
+const SWARMLET_URL = "https://swarmlet.dev";
+const SWARMLET_REPO_URL = "https://github.com/swarmlet/swarmlet";
+const SWARMLET_REMOTE_URL = `git@github.com:swarmlet/swarmlet.git`;
 const SWARMLET_KEYWORDS = [
   "swarmlet",
   "docker",
@@ -35,6 +36,12 @@ module.exports = {
     // Community plugins
     "docusaurus-plugin-sass",
     [
+      "docusaurus2-dotenv",
+      {
+        systemvars: false,
+      },
+    ],
+    [
       "@docusaurus/plugin-sitemap",
       {
         cacheTime: 600 * 1000,
@@ -43,6 +50,17 @@ module.exports = {
       },
     ],
     // Custom plugins
+    // [
+    //   path.resolve(__dirname, "plugins/fetch-external-docs/src/index.js"),
+    //   {
+    //     tmpDir: "/tmp/swarmlet",
+    //     repoUrl: SWARMLET_REPO_URL,
+    //     remoteUrl: SWARMLET_REMOTE_URL,
+    //     sidebarContent: require("./sidebars.js"),
+    //     sidebarPath: path.resolve(__dirname, "sidebars.js"),
+    //     targetPath: path.resolve(__dirname, "docs/examples"),
+    //   },
+    // ],
     [
       path.resolve(__dirname, "plugins/inject-html-tags/src/index.js"),
       {
@@ -122,11 +140,11 @@ module.exports = {
     ],
   ],
   themeConfig: {
-    algolia: {
-      apiKey: "e8dcc4acaf22c600f8e20738fb2b5915",
-      indexName: "docs-production",
-      appId: "FAVSNXVQZ4",
-    },
+//     algolia: {
+//       apiKey: "e8dcc4acaf22c600f8e20738fb2b5915",
+//       indexName: "docs-production",
+//       appId: "FAVSNXVQZ4",
+//     },
     navbar: {
       title: SWARMLET,
       logo: {
@@ -141,7 +159,7 @@ module.exports = {
           position: "left",
         },
         {
-          href: `${SWARMLET_GITHUB}/swarmlet`,
+          href: SWARMLET_REPO_URL,
           label: "GitHub",
           position: "left",
         },
@@ -193,7 +211,7 @@ module.exports = {
           items: [
             {
               label: "GitHub",
-              href: `${SWARMLET_GITHUB}/swarmlet`,
+              href: SWARMLET_REPO_URL,
             },
             {
               label: "Projects",
@@ -215,7 +233,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: `${SWARMLET_GITHUB}/swarmlet-website/edit/master/`,
+          editUrl: `${SWARMLET_REPO_URL}-website/edit/master/`,
           homePageId: "getting-started/introduction",
         },
         theme: {
@@ -224,5 +242,8 @@ module.exports = {
       },
     ],
   ],
-  themes: ["@docusaurus/theme-classic", "@docusaurus/theme-search-algolia"],
+  themes: [
+    "@docusaurus/theme-classic",
+    // "@docusaurus/theme-search-algolia",
+  ],
 };
