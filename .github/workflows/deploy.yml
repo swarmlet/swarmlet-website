@@ -36,7 +36,7 @@ jobs:
           git fetch --unshallow
           git remote add swarm $SWARMLET_USER@$SWARMLET_HOST:$SWARMLET_APP_NAME
           GIT_SSH_COMMAND="ssh -i $HOME/.ssh/id_rsa -F /dev/null -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" \
-          git push -u swarm $BRANCH:master
+          git push -u swarm $BRANCH:master --force
 
       - name: Slack notify
         uses: rtCamp/action-slack-notify@v2.0.2
