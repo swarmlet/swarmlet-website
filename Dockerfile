@@ -1,6 +1,6 @@
 FROM node:alpine as builder
 
-ADD package.json package-lock.json ./
+ADD package*.json ./
 
 RUN npm set progress=false
 RUN npm install --only=production
