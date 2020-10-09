@@ -89,6 +89,13 @@ module.exports = {
           {
             tagName: "meta",
             attributes: {
+              name: "google-site-verification",
+              content: "7wJnlaj_li6cThBespVULfKWxyREerM3_Bn8gG_rGMc",
+            },
+          },
+          {
+            tagName: "meta",
+            attributes: {
               property: "og:url",
               content: SWARMLET_URL,
             },
