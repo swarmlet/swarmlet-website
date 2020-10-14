@@ -47,6 +47,7 @@ module.exports = {
         cacheTime: 600 * 1000,
         changefreq: "weekly",
         priority: 0.5,
+        trailingSlash: false,
       },
     ],
     // Custom plugins
@@ -249,8 +250,5 @@ module.exports = {
       },
     ],
   ],
-  themes: [
-    "@docusaurus/theme-classic",
-    "@docusaurus/theme-search-algolia",
-  ],
+  themes: ["@docusaurus/theme-classic", "@docusaurus/theme-search-algolia"],
 };

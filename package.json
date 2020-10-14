@@ -15,6 +15,7 @@
     "@docusaurus/plugin-sitemap": "^2.0.0-alpha.37",
     "@docusaurus/preset-classic": "^2.0.0-alpha.58",
     "@docusaurus/theme-search-algolia": "^2.0.0-alpha.32",
+    "algolia-sitemap": "^2.2.0",
     "classnames": "^2.2.6",
     "docusaurus-plugin-sass": "^0.1.9",
     "docusaurus2-dotenv": "^1.4.0",
