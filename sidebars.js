@@ -1,5 +1,5 @@
-module.exports={
-  "sidebar": {
+module.exports = {
+  sidebar: {
     "Getting Started": [
       "getting-started/introduction",
       "getting-started/installation",
@@ -11,26 +11,28 @@ module.exports={
       "getting-started/modules-configuration",
       "getting-started/domain-configuration",
       "getting-started/automatic-ssl-and-load-balancing",
-      "getting-started/metrics-and-dashboards"
+      "getting-started/metrics-and-dashboards",
     ],
-    "Deployment": [
-      "deployment/how-it-works"
+    "App Deployment": [
+      "app-deployment/deploying-apps",
+      "app-deployment/docker-compose",
+      "app-deployment/deployment-labels",
     ],
-    "Swarm Managment": [
-      "swarm-management/managing-swarm-nodes"
+    "Persistent Storage": [
+      "persistent-storage/using-storage",
+      "persistent-storage/glusterfs",
     ],
-    "Services": [],
-    "Configuration": [],
-    "Networking": [],
-    "Development": [],
-    "Examples": [
+    "Swarm Managment": ["swarm-management/managing-swarm-nodes"],
+    Services: [],
+    Configuration: [],
+    Networking: [],
+    Development: [],
+    Examples: [
       "examples/basic-example",
       "examples/nginx-react-node-api",
       "examples/portainer-edge",
-      "examples/python-redis"
+      "examples/python-redis",
     ],
-    "Temp": [
-      "getting-started/styleguide"
-    ]
-  }
-}
+    // Temp: ["getting-started/styleguide"],
+  },
+};

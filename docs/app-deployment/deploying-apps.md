@@ -1,6 +1,6 @@
 ---
-id: how-it-works
-title: How it works
+id: deploying-apps
+title: Deploying apps
 
 ---
 

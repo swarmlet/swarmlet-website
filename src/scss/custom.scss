@@ -6,6 +6,10 @@
  */
 
 /* You can override the default Infima variables here. */
+code {
+  text-transform: initial;
+}
+
 :root {
   --ifm-color-primary: rgb(52, 120, 177);
   --ifm-color-primary-dark: rgb(43, 102, 150);
