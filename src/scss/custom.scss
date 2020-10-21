@@ -10,6 +10,13 @@ code {
   text-transform: initial;
 }
 
+.markdown .admonition-tip {
+  p,
+  li {
+    font-weight: 500;
+  }
+}
+
 :root {
   --ifm-color-primary: rgb(52, 120, 177);
   --ifm-color-primary-dark: rgb(43, 102, 150);
@@ -18,7 +25,7 @@ code {
   --ifm-color-primary-light: rgb(70, 130, 179);
   --ifm-color-primary-lighter: rgb(88, 137, 177);
   --ifm-color-primary-lightest: rgb(114, 148, 177);
-  --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 97%;
 }
 
 .docusaurus-highlight-code-line {
