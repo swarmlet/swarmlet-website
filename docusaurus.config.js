@@ -31,7 +31,7 @@ module.exports = {
   url: SWARMLET_URL,
   baseUrl: "/",
   favicon: "favicon.ico",
-  scripts: [`/matomo.js`, `/player.js`],
+  scripts: [`/matomo.js`, `/vimeo.js`],
   plugins: [
     // Community plugins
     "docusaurus-plugin-sass",
