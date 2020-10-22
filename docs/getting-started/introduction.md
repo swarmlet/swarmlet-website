@@ -23,9 +23,9 @@ Use the `swarmlet` command to perform common tasks on the server.
 
 
 Swarmlet is a thin wrapper around [Docker Compose](https://docs.docker.com/compose/) and [Docker Swarm mode](https://docs.docker.com/engine/swarm/).  
-A few core services, [Traefik](https://github.com/containous/traefik) (v2.2), [Let's Encrypt](https://letsencrypt.org) and [Ansible](https://www.ansible.com/) are included by default.  
-These enable automatic SSL, load balancing and swarm state management.  
-Obtain wildcard certificates for your domains by setting up a DNS/TLS challenge - [more info]().  
+A few core services, [Traefik](https://github.com/containous/traefik) (v2.2), [Let's Encrypt](https://letsencrypt.org), [Ansible](https://www.ansible.com/) and [GlusterFS](https://www.gluster.org/) are included by default.  
+These enable automatic SSL, load balancing, swarm state management and distributed file storage.  
+Let's Encrypt wildcard certificates support - [more info]().  
 
 During the installation you can choose to install [Matamo](https://matomo.org/), [Portainer](https://www.portainer.io/), [Swarmpit](https://swarmpit.io) and [Swarmprom](https://github.com/stefanprodan/swarmprom).  
 These optional services are included to provide analytics and various metrics dashboards.
@@ -89,14 +89,10 @@ Since we're using `Dockerfile`'s and `docker-compose.yml` files in our projects 
 1. Add a [`docker-compose.yml`](/docs/getting-started/deploying-applications) file in the root of your project
 1. Add a git remote: [`git remote add swarm git@swarm:my-project`](/docs/getting-started/ssh-key-setup)  
 1. Deploy your application stack to the swarm using `git push swarm master`
-1. SSL certificates for web facing services are generated automatically using Let's Encrypt  
-   (assuming you've assigned a domain to your server in your DNS configuration)
 
 **[Example application setup and deployment guide](/docs/getting-started/deploying-applications#example-application-setup)**
 
 ## Installation
-
-**Requirements**: Bash 4.0 or higher (run `bash --version`).
 
 #### [Full installation instructions can be found here](/docs/getting-started/installation)  
 
@@ -120,7 +116,7 @@ curl -fsSL https://get.swarmlet.dev | bash
 
 The installation should take a few minutes to complete.
 
-### Custom installation [(options)](https://swarmlet.dev/docs/getting-started/installation):
+### Custom installation [(options)](https://swarmlet.dev/docs/getting-started/installation)
 
 ```shell
 # Headless (noninteractive) installation:
