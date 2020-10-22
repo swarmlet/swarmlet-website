@@ -25,14 +25,15 @@ services:
       - /bin/sh
       - -c
       - |
-        echo "Contents of /swarmlet-config"
-        cat /swarmlet-config
-        echo "Contents of /run/secrets/swarmlet-user-secrets"
+        echo "Contents of swarmlet-core-config"
+        cat /swarmlet-core-config
+        echo "Contents of swarmlet-user-config"
+        cat /swarmlet-user-config
+        echo "Contents of swarmlet-user-secrets"
         cat /run/secrets/swarmlet-user-secrets
     configs:
       - swarmlet-core-config
       - swarmlet-user-config
-      - swarmlet-config
     secrets:
       - swarmlet-user-secrets
     deploy:
@@ -43,8 +44,6 @@ configs:
   swarmlet-core-config:
     external: true
   swarmlet-user-config:
-    external: true
-  swarmlet-config:
     external: true
 
 secrets:
