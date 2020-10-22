@@ -7,7 +7,7 @@ title: Secrets and configs
 
 Variables configured during installation will be stored in Docker [configs](https://docs.docker.com/engine/swarm/configs/) and [secrets](https://docs.docker.com/engine/swarm/secrets/). This enables usage of secret values in swarm services. Include secrets and/or configs in the project `docker-compose.yml` file to access them in your services. Secrets can be used by swarm services only.
 
-:::tip File paths
+:::note File paths
 
 - Configs are mounted at `/config-name` in the service container.
 - Secrets are mounted at `/run/secrets/secret-name`.

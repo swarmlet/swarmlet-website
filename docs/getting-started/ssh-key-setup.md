@@ -34,7 +34,7 @@ Host swarm
     IdentityFile ~/.ssh/id_rsa_swarm
 ```
 
-:::tip Shorthand
+:::note Shorthand
 Now `ssh root@123.23.12.123` becomes `ssh swarm`  
 This shorthand makes it easy to connect or reference your server in projects.  
 :::

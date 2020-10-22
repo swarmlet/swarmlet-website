@@ -112,7 +112,7 @@ Define environment variables in `.env`:
 DOMAIN=mydomain.com
 ```
 
-:::tip secrets and configs
+:::note secrets and configs
 Never store sensitive data hardcoded in environment variables like this.  
 \> [Read more about secrets and configs here](/docs/getting-started/secrets-and-configs)
 :::

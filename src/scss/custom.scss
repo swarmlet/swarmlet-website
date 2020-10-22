@@ -17,6 +17,11 @@ code {
   }
 }
 
+.alert--secondary {
+  --ifm-alert-background-color: #dcebf9;
+  --ifm-alert-border-color: #dcebf9;
+}
+
 :root {
   --ifm-color-primary: rgb(52, 120, 177);
   --ifm-color-primary-dark: rgb(43, 102, 150);

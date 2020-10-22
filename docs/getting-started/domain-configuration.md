@@ -7,7 +7,7 @@ title: Domain configuration
 
 Add a `label` under the `deploy` key in your project compose file to expose your service on the desired domain. Traefik will pick up any changes to updating services so whenever you redeploy, Traefik will try to create SSL certificates using Let's Encrypt if they don't exist already.
 
-:::tip Environment variables
+:::note Environment variables
 You can use environment variables in you Compose files.  
 Place a `.env` file next to the `docker-compose.yml` project file to use the environment variables.  
 Or update the `swarmlet-user-config` Docker Config so that the deployer service can access the variable during builds.

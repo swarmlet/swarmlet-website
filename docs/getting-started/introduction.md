@@ -24,7 +24,8 @@ Use the `swarmlet` command to perform common tasks on the server.
 
 Swarmlet is a thin wrapper around [Docker Compose](https://docs.docker.com/compose/) and [Docker Swarm mode](https://docs.docker.com/engine/swarm/).  
 A few core services, [Traefik](https://github.com/containous/traefik) (v2.2), [Let's Encrypt](https://letsencrypt.org) and [Ansible](https://www.ansible.com/) are included by default.  
-These enable automatic SSL, load balancing and swarm state management.
+These enable automatic SSL, load balancing and swarm state management.  
+Obtain wildcard certificates for your domains by setting up a DNS/TLS challenge - [more info]().  
 
 During the installation you can choose to install [Matamo](https://matomo.org/), [Portainer](https://www.portainer.io/), [Swarmpit](https://swarmpit.io) and [Swarmprom](https://github.com/stefanprodan/swarmprom).  
 These optional services are included to provide analytics and various metrics dashboards.
@@ -99,7 +100,7 @@ Since we're using `Dockerfile`'s and `docker-compose.yml` files in our projects 
 
 #### [Full installation instructions can be found here](/docs/getting-started/installation)  
 
-:::tip Configure a domain
+:::note Configure a domain
 Make sure you have a (sub) domain available which is pointed to your server, this is necessary to access the Traefik or Portainer/Matomo dashboards located at e.g. `portainer.your-domain.com`.  
 
 You can use `dig` if you're unsure if your domain points to the right IP address or DNS has updated yet.
