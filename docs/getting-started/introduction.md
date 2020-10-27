@@ -18,14 +18,14 @@ Deploy or update an app by simply `git push`-ing your app to your newly created 
 Add additional nodes (servers) to the swarm (server cluster) to provide more resources for your apps.  
 Use the `swarmlet` command to perform common tasks on the server.  
 
-\> [More on how Swarmlet works]()
+\> [More on how Swarmlet works](/docs/app-deployment/deploying-apps)
 :::
 
 
 Swarmlet is a thin wrapper around [Docker Compose](https://docs.docker.com/compose/) and [Docker Swarm mode](https://docs.docker.com/engine/swarm/).  
-A few core services, [Traefik](https://github.com/containous/traefik) (v2.2), [Let's Encrypt](https://letsencrypt.org), [Ansible](https://www.ansible.com/) and [GlusterFS](https://www.gluster.org/) are included by default.  
+A few core services, [Traefik](https://github.com/containous/traefik) (v2.3), [Let's Encrypt](https://letsencrypt.org), [Ansible](https://www.ansible.com/) and [GlusterFS](https://www.gluster.org/) are included by default.  
 These enable automatic SSL, load balancing, swarm state management and distributed file storage.  
-Let's Encrypt wildcard certificates support - [more info]().  
+Let's Encrypt wildcard certificates support - [more info](https://doc.traefik.io/traefik/https/acme/#wildcard-domains).  
 
 During the installation you can choose to install [Matamo](https://matomo.org/), [Portainer](https://www.portainer.io/), [Swarmpit](https://swarmpit.io) and [Swarmprom](https://github.com/stefanprodan/swarmprom).  
 These optional services are included to provide analytics and various metrics dashboards.

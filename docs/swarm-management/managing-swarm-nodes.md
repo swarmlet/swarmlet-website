@@ -5,12 +5,15 @@ title: Managing swarm nodes
 ---
 
 ## Add or remove a swarm node
+`swarmlet node join <role>`
 ```shell
-# TODO
+swarmlet join manager
+```
+Output:
+```
+To add a manager to this swarm, run the following command on the target node:
 
-# swarmlet node:add <role> <name> <node-ip>
-# swarmlet node:remove <name>
+    curl -fsSL http://188.166.106.7:42681/join/0dd9c2a3a8c54d29 | bash
 
-# Force swarm to re-initialize
-# docker swarm init --force-new-cluster --advertise-addr 178.62.203.115
+Waiting for remote..
 ```
