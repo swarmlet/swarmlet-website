@@ -4,17 +4,24 @@ title: Introduction
 sidebar_label: Introduction
 ---
 
+<div className="introduction">
+  <img className="logo" align="left" src="/img/logo.png" width="175" alt="logo" />
+  <h2>What is Swarmlet?</h2>
+</div>
+
 ## What is Swarmlet?
 
 Swarmlet is a self-hosted, open-source Platform as a Service that runs on any single server.  
 It's mainly intended for use with multiple servers, a server cluster / swarm.  
 Heavily inspired by **[Dokku](http://dokku.viewdocs.io/dokku/)**.
 
-:::note Simply put
-It's a piece of software that you can install on a server to host apps with ease.  
-Swarmlet handles the initial server configuration, and makes sure apps keep running.  
+<br />
 
-Deploy or update an app by simply `git push`-ing your app to your newly created server.  
+:::note Simply put
+It's a piece of software that you can install on a server, enabling you to host apps with ease.  
+Swarmlet handles the initial server configuration and makes sure apps keep running.  
+
+Deploy or update an app by simply `git push`-ing your app to your newly created Swarmlet server.  
 Add additional nodes (servers) to the swarm (server cluster) to provide more resources for your apps.  
 Use the `swarmlet` command to perform common tasks on the server.  
 
