@@ -17,6 +17,7 @@ module.exports = {
       "app-deployment/deploying-apps",
       "app-deployment/docker-compose",
       "app-deployment/deployment-labels",
+      "app-deployment/ci-cd",
     ],
     "Persistent Storage": [
       "persistent-storage/using-storage",

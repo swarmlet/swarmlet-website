@@ -43,7 +43,10 @@ This project is aimed at developers that want to experiment with application dep
 - The Swarmlet project boards are located at [github.com/orgs/swarmlet/projects](https://github.com/orgs/swarmlet/projects)
 - Join the discussion on Slack using [this invite link](https://join.slack.com/t/swarmlet/shared_invite/zt-eki9qa53-9FdvUik604rncp61dbawkQ)
 
-### Demo
+## Demo
+
+Video walkthrough on how to set up a domain and server with Swarmlet from scratch.  
+We'll deploy 8 apps in under 10 minutes, with each app accessible on it's own (sub)domain.
 
 export const DemoVideo = () => {
 return (

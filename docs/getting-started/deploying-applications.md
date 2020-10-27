@@ -3,7 +3,7 @@ id: deploying-applications
 title: Deploying applications
 ---
 
-## How to deploy applications on your swarm
+## How to deploy apps on your swarm
 
 - Use an existing project, or create a new project based on one of the [examples](/docs/getting-started/deploying-applications#example-application-setup)
 - Add a `docker-compose.yml` file in the root of your project: [example docker-compose.yml](https://github.com/swarmlet/swarmlet/blob/master/examples/basic-example/docker-compose.yml)
@@ -12,7 +12,7 @@ title: Deploying applications
 - Push to the swarm repository: `git push swarm master`
 - Wait for Traefik to update it's configuration and visit your app at [https://my-app.mydomain.com]()
 
-## Example application setup
+### Example app setup - Python & Redis
 
 This guide describes how to deploy a simple Python web server using a Redis backend on your swarm.
 
@@ -125,4 +125,104 @@ git commit -m 'initial'
 git push origin master
 ```
 
-Wait for Traefik to update it's configuration and visit your app at [https://my-app.mydomain.com]()!
+Wait for Traefik to update it's configuration and visit your app at <https://my-app.mydomain.com>!
+
+---
+
+### Example app setup - Static site
+
+This guide describes how to deploy a static site on your swarm.  
+
+Create a new project locally:
+
+```shell
+# Create project folder
+mkdir my-site
+cd my-site
+
+# Create files/folders
+mkdir public
+touch Dockerfile docker-compose.yml nginx.default.conf public/index.html
+
+# Initialize a local git repository and add a new remote
+git init
+git remote add origin git@swarm:my-site
+```
+
+Code a basic web page in `public/index.html`:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="title">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My static site</title>
+  </head>
+  <body>
+    <h1>Hello Swarmlet!</h1>
+  </body>
+</html>
+```
+
+Add a basic NGINX configuration in `nginx.default.conf`:
+
+```nginx
+server {
+  listen 5000;
+  server_name localhost;
+
+  location / {
+    root /usr/share/nginx/html;
+    index index.html index.htm;
+    try_files $uri $uri/ /index.html;
+  }
+}
+```
+
+Describe the build steps in a `Dockerfile`:
+
+```Dockerfile
+FROM nginx:alpine
+
+COPY ./public /usr/share/nginx/html
+COPY ./nginx.default.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 5000
+```
+
+Describe the application stack in a `docker-compose.yml` file including the desired hostname for the frontend service and internal container port to expose:
+
+```yml
+version: "3.7"
+
+services:
+  frontend:
+    image: ${SWARMLET_REGISTRY}/my-site
+    build: .
+    deploy:
+      replicas: 3
+      labels:
+        - traefik.enable=true
+        - traefik.http.services.my-site.loadbalancer.server.port=5000
+        - traefik.http.routers.my-site.rule=Host(`my-site.mydomain.com`)
+        - traefik.http.routers.my-site.entrypoints=http,https
+        - traefik.http.routers.my-site.middlewares=redirect@file
+    networks:
+      - traefik-public
+
+networks:
+  traefik-public:
+    external: true
+```
+
+Create a new commit and deploy the application to the swarm using `git push`:
+
+```shell
+git add .
+git commit -m 'initial'
+git push origin master
+```
+
+Wait for Traefik to update it's configuration and visit your app at <https://my-site.mydomain.com>!

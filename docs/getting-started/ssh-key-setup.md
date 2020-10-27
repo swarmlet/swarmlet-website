@@ -3,7 +3,7 @@ id: ssh-key-setup
 title: SSH key setup
 ---
 
-## Setting up SSH keys
+## Setting up local SSH keys
 If you don't already have a private SSH key, typically located at `~/.ssh/id_rsa`, you will need to create one. Fortunately, this is an easy task.  
 
 Optionally, you can create a SSH key specifically for use with the swarm, next to your other SSH key(s).
@@ -34,17 +34,20 @@ Host swarm
     IdentityFile ~/.ssh/id_rsa_swarm
 ```
 
-:::note Shorthand
+:::note Host alias
 Now `ssh root@123.23.12.123` becomes `ssh swarm`  
-This shorthand makes it easy to connect or reference your server in projects.  
+This alias makes it easy to connect or reference your server in projects.  
 :::
 
 ## Adding a git remote
 
 In order to push and deploy apps to the swarm, we need to add a git remote to our project repository.  
 Swarmlet creates a user named 'git' on the server, this user handles incoming changes.  
-When specifying a remote, the remote user **must** be 'git'. And because we've updated our `~/.ssh/config` file, we can specify the host by it's name, 'swarm' in this example.  
-If the project doesn't exist already, a new repo will be created on the swarm named `<project-name>`.
+If a project doesn't exist already, a new repo will be created on the swarm named `<project-name>`.  
+
+:::note Remote user
+When specifying a remote, the remote user **must** be 'git'. And because we've updated our `~/.ssh/config` file, we can specify the host by it's name, 'swarm' in this example.
+:::
 
 Adding a git remote in a project that points to your server is as easy as running:
 ```shell
