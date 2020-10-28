@@ -1,15 +1,18 @@
 ---
 id: managing-swarm-nodes
 title: Managing swarm nodes
-
 ---
 
 ## Add or remove a swarm node
-`swarmlet node join <role>`
+
+Syntax: `swarmlet node join <role>`
+
 ```shell
 swarmlet join manager
 ```
+
 Output:
+
 ```
 To add a manager to this swarm, run the following command on the target node:
 
@@ -17,3 +20,8 @@ To add a manager to this swarm, run the following command on the target node:
 
 Waiting for remote..
 ```
+
+:::note TODO
+Unfortunately this is still a todo.  
+Please check back in a few weeks!
+:::

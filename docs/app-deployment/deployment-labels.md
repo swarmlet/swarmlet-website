@@ -1,9 +1,12 @@
 ---
 id: deployment-labels
 title: Deployment labels
-
 ---
 
-## Labels
+:::note
 
-<https://docs.docker.com/compose/compose-file/#replicas>
+- <https://docs.docker.com/compose/compose-file/#replicas>
+
+:::
+
+## Labels

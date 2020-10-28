@@ -36,7 +36,7 @@ const features = [
     imageUrl: "img/undraw_secure_server.svg",
     description: (
       <>
-        Swarmlet uses Traefik, Consul and Let's Encrypt to provide automatic SSL
+        Swarmlet uses Traefik v2 and Let's Encrypt to provide automatic SSL
         and load balancing on your apps.
       </>
     ),

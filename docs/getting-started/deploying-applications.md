@@ -108,9 +108,9 @@ networks:
     external: true
 ```
 
-Define environment variables in `.env`:
+Define environment variables in a `.env` file:
 
-```shell
+```shell title="./.env"
 DOMAIN=mydomain.com
 ```
 

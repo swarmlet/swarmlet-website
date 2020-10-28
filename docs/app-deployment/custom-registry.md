@@ -97,7 +97,9 @@ networks:
 
 ### Create an entrypoint file
 
-Create or update the `entrypoint` script in the root of your project.  
+TODO
+
+<!-- Create or update the `entrypoint` script in the root of your project.  
 This script will make sure that the secrets are available when we try to pull artifacts from the external registry.  
 
 Example entrypoint file:
@@ -115,7 +117,7 @@ else
     "$REGISTRY_HOST"
 fi
 
-```
+``` -->
 
 ### Store the registry credentials on the swarm
 

@@ -30,7 +30,8 @@ Deploy or update an app by simply `git push`-ing your app to your newly created 
 Add additional nodes (servers) to the swarm (server cluster) to provide more resources for your apps.  
 Use the `swarmlet` command to perform common tasks on the server.
 
-\> [More on how Swarmlet works](/docs/app-deployment/deploying-apps)
+\> [More on how Swarmlet works](/docs/app-deployment/deploying-apps)  
+<!-- \> [Swarmlet CLI commands](/docs/cli/commands)   -->
 :::
 
 Swarmlet is a thin wrapper around [Docker Compose](https://docs.docker.com/compose/) and [Docker Swarm mode](https://docs.docker.com/engine/swarm/).  
@@ -51,6 +52,11 @@ This project is aimed at developers that want to experiment with application dep
 
 Video walkthrough on how to set up a domain and server with Swarmlet from scratch.  
 We'll deploy 8 apps in under 10 minutes, with each app accessible on it's own (sub)domain.
+
+:::note TODO
+This demo is outdated, things work roughly the same though.  
+Please check back in a few weeks for an updated version!
+:::
 
 export const DemoVideo = () => (
   <div
@@ -103,12 +109,13 @@ Since we're using `Dockerfile`'s and `docker-compose.yml` files in our projects 
 1. Add a git remote: [`git remote add swarm git@swarm:my-project`](/docs/getting-started/ssh-key-setup)
 1. Deploy your application stack to the swarm using `git push swarm master`
 
-> - [Example application setup and deployment guide](/docs/getting-started/deploying-applications#example-app-setup)
+> [Example application setup and deployment guide](/docs/getting-started/deploying-applications#example-app-setup)
 
 ## Installation
 
-:::note Configure a domain
 Make sure you have a (sub) domain available which is pointed to your server, this is necessary to access the Traefik or Portainer/Matomo dashboards located at e.g. `portainer.your-domain.com`.
+
+:::note Configure a domain
 
 You can use `dig` if you're unsure if your domain points to the right IP address or DNS has updated yet.
 From your local machine, run:
@@ -129,7 +136,7 @@ curl -fsSL https://get.swarmlet.dev | bash
 
 The installation should take a few minutes to complete.
 
-> - [Full installation instructions can be found here](/docs/getting-started/installation)
+> [Full installation instructions can be found here](/docs/getting-started/installation)
 
 ### Custom installation [(options)](https://swarmlet.dev/docs/getting-started/installation)
 
