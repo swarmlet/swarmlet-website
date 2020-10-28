@@ -9,6 +9,8 @@ title: Deploying apps
 
 ## How Swarmlet handles deployments
 
+TODO
+
 <!-- You can `git push` to any swarm manager node to create or update a repository and deploy your application on the swarm. Swarmlet creates a `git` user on the swarm node during installation and creates the `/var/repo` directory, which will contain the bare repositories for every application you deploy to the server using Swarmlet. If a repository does not exist, it will be created by a `pre-receive` git hook.
 
 After receiving the repository, the `post-receive` hook will execute, which triggers the `deployments` service. The `deployments` service searches for the (optional) `.env` and `entrypoint` files and the project `docker-compose.yml` file, which must be placed in the root of the project. It will build the project using `docker-compose build`, push it to the specified registry and deploy the stack using `docker stack deploy`.
