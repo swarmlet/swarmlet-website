@@ -9,10 +9,10 @@ title: Installation
 Tested only on Ubuntu 18.04 x64.  
 Please create a PR if you have got it working on your system!  
 Or propose to [edit this page](https://github.com/swarmlet/swarmlet-website/edit/master/docs/getting-started/installation.md) to add your OS to the list of supported systems. Thanks!
-- Recommended distribution: **Ubuntu 18.04 x64**  
-- Requirements: **Bash 4.0** or higher (run `bash --version`)
-:::
 
+- Recommended distribution: **Ubuntu 18.04 x64**
+
+:::
 
 ### Quick interactive installation
 

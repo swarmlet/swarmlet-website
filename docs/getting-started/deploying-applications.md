@@ -33,9 +33,9 @@ git init
 git remote add origin git@swarm:my-app
 ```
 
-Code a basic Python web server in `app.py`:
+Code a basic Python web server:
 
-```python
+```python title="./app.py"
 from flask import Flask
 from redis import Redis
 import socket
@@ -58,16 +58,16 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000, debug=True)
 ```
 
-Add the application dependencies to `requirements.txt`:
+Add the application dependencies:
 
-```txt
+```txt title="./requirements.txt"
 flask
 redis
 ```
 
 Describe the build steps in a `Dockerfile`:
 
-```Dockerfile
+```Dockerfile title="./Dockerfile"
 FROM python:3.4-alpine
 ADD . /code
 WORKDIR /code
@@ -77,7 +77,7 @@ CMD ["python", "app.py"]
 
 Describe the application stack in a `docker-compose.yml` file including the desired hostname for the frontend service and internal container port to expose:
 
-```yml
+```yml title="./docker-compose.yml"
 version: "3.7"
 
 services:
@@ -151,9 +151,9 @@ git init
 git remote add origin git@swarm:my-site
 ```
 
-Code a basic web page in `public/index.html`:
+Code a basic web page`:
 
-```html
+```html title="./public/index.html"
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -168,9 +168,9 @@ Code a basic web page in `public/index.html`:
 </html>
 ```
 
-Add a basic NGINX configuration in `nginx.default.conf`:
+Add a basic NGINX configuration:
 
-```nginx
+```nginx title="./nginx.default.conf"
 server {
   listen 5000;
   server_name localhost;
@@ -185,7 +185,7 @@ server {
 
 Describe the build steps in a `Dockerfile`:
 
-```Dockerfile
+```Dockerfile title="./Dockerfile"
 FROM nginx:alpine
 
 COPY ./public /usr/share/nginx/html
@@ -196,7 +196,7 @@ EXPOSE 5000
 
 Describe the application stack in a `docker-compose.yml` file including the desired hostname for the frontend service and internal container port to expose:
 
-```yml
+```yml title="./docker-compose.yml"
 version: "3.7"
 
 services:

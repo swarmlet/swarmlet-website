@@ -5,7 +5,13 @@ sidebar_label: Introduction
 ---
 
 <div className="introduction">
-  <img className="logo" align="left" src="/img/logo.png" width="175" alt="logo" />
+  <img
+    className="logo"
+    align="left"
+    src="/img/logo.png"
+    width="175"
+    alt="logo"
+  />
   <h2>What is Swarmlet?</h2>
 </div>
 
@@ -18,20 +24,19 @@ Heavily inspired by **[Dokku](http://dokku.viewdocs.io/dokku/)**.
 
 :::note Simply put
 It's a piece of software that you can install on a server, enabling you to host apps with ease.  
-Swarmlet handles the initial server configuration and makes sure apps keep running.  
+Swarmlet handles the initial server configuration and makes sure apps keep running.
 
 Deploy or update an app by simply `git push`-ing your app to your newly created Swarmlet server.  
 Add additional nodes (servers) to the swarm (server cluster) to provide more resources for your apps.  
-Use the `swarmlet` command to perform common tasks on the server.  
+Use the `swarmlet` command to perform common tasks on the server.
 
 \> [More on how Swarmlet works](/docs/app-deployment/deploying-apps)
 :::
 
-
 Swarmlet is a thin wrapper around [Docker Compose](https://docs.docker.com/compose/) and [Docker Swarm mode](https://docs.docker.com/engine/swarm/).  
 A few core services, [Traefik](https://github.com/containous/traefik) (v2.3), [Let's Encrypt](https://letsencrypt.org), [Ansible](https://www.ansible.com/) and [GlusterFS](https://www.gluster.org/) are included by default.  
 These enable automatic SSL, load balancing, swarm state management and distributed file storage.  
-Let's Encrypt wildcard certificates support - [more info](https://doc.traefik.io/traefik/https/acme/#wildcard-domains).  
+Let's Encrypt wildcard certificates support - [more info](https://doc.traefik.io/traefik/https/acme/#wildcard-domains).
 
 During the installation you can choose to install [Matamo](https://matomo.org/), [Portainer](https://www.portainer.io/), [Swarmpit](https://swarmpit.io) and [Swarmprom](https://github.com/stefanprodan/swarmprom).  
 These optional services are included to provide analytics and various metrics dashboards.
@@ -47,30 +52,29 @@ This project is aimed at developers that want to experiment with application dep
 Video walkthrough on how to set up a domain and server with Swarmlet from scratch.  
 We'll deploy 8 apps in under 10 minutes, with each app accessible on it's own (sub)domain.
 
-export const DemoVideo = () => {
-return (
-<div
-style={{
-        padding: "62.5% 0 0 0",
-        position: "relative",
-        marginBottom: "25px",
-      }}>
-<iframe
-src="https://player.vimeo.com/video/412918465?title=0&byline=0&portrait=0"
-style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-        }}
-frameBorder="0"
-allow="autoplay; fullscreen"
-allowFullScreen >
-</iframe>
-</div>
-)
-}
+export const DemoVideo = () => (
+  <div
+    style={{
+      padding: "62.5% 0 0 0",
+      position: "relative",
+      marginBottom: "25px",
+    }}
+  >
+    <iframe
+      src="https://player.vimeo.com/video/412918465?title=0&byline=0&portrait=0"
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+      }}
+      frameBorder="0"
+      allow="autoplay; fullscreen"
+      allowFullScreen
+    ></iframe>
+  </div>
+);
 
 <DemoVideo />
 
@@ -96,23 +100,23 @@ Since we're using `Dockerfile`'s and `docker-compose.yml` files in our projects 
 1. [Edit your local SSH config](/docs/getting-started/ssh-key-setup) to use `ssh swarm` instead of `ssh root@123.23.12.123`
 1. Use an existing project, or clone one of the [examples](/docs/examples/static-site)
 1. Add a [`docker-compose.yml`](/docs/getting-started/deploying-applications) file in the root of your project
-1. Add a git remote: [`git remote add swarm git@swarm:my-project`](/docs/getting-started/ssh-key-setup)  
+1. Add a git remote: [`git remote add swarm git@swarm:my-project`](/docs/getting-started/ssh-key-setup)
 1. Deploy your application stack to the swarm using `git push swarm master`
 
-**[Example application setup and deployment guide](/docs/getting-started/deploying-applications#example-application-setup)**
+> - [Example application setup and deployment guide](/docs/getting-started/deploying-applications#example-app-setup)
 
 ## Installation
 
-#### [Full installation instructions can be found here](/docs/getting-started/installation)  
-
 :::note Configure a domain
-Make sure you have a (sub) domain available which is pointed to your server, this is necessary to access the Traefik or Portainer/Matomo dashboards located at e.g. `portainer.your-domain.com`.  
+Make sure you have a (sub) domain available which is pointed to your server, this is necessary to access the Traefik or Portainer/Matomo dashboards located at e.g. `portainer.your-domain.com`.
 
 You can use `dig` if you're unsure if your domain points to the right IP address or DNS has updated yet.
 From your local machine, run:
+
 ```shell
 dig +short your-domain.com
 ```
+
 :::
 
 ### Quick interactive installation
@@ -124,6 +128,8 @@ curl -fsSL https://get.swarmlet.dev | bash
 ```
 
 The installation should take a few minutes to complete.
+
+> - [Full installation instructions can be found here](/docs/getting-started/installation)
 
 ### Custom installation [(options)](https://swarmlet.dev/docs/getting-started/installation)
 

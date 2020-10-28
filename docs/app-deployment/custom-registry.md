@@ -23,9 +23,7 @@ Since GitHub recently announced [GitHub Container Registry](https://github.blog/
 
 ### Create GitHub Action
 
-GitHub Action `.github/workflows/deploy.yml` example:
-
-```yml
+```yml title="./.github/workflows/deploy.yml"
 name: Deploy to swarm
 
 on:
@@ -68,9 +66,7 @@ jobs:
 
 ### Update the project Docker Compose file
 
-Docker Compose file `docker-compose.yml` example:
-
-```yml
+```yml title="./docker-compose.yml"
 version: '3.7'
 
 services:
@@ -104,9 +100,9 @@ networks:
 Create or update the `entrypoint` script in the root of your project.  
 This script will make sure that the secrets are available when we try to pull artifacts from the external registry.  
 
-Example `entrypoint` file:
+Example entrypoint file:
 
-```bash
+```bash title="./entrypoint"
 #!/usr/bin/env bash
 
 if [[ ! -f "/run/secrets/github-registry-secrets" ]]; then

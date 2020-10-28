@@ -36,7 +36,7 @@ MY_CONF="ALTERNATIVE_HOSTNAME=SwarmletJohansson"
 echo $MY_CONF | docker config create my-config -
 ```
 
-```yml
+```yml title="./docker-compose.yml"
 version: "3.7"
 
 services:

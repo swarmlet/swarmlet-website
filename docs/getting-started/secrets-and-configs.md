@@ -15,7 +15,7 @@ Variables configured during installation will be stored in Docker [configs](http
 
 ## Secrets and configs
 
-```yml
+```yml title="./docker-compose.yml"
 version: "3.7"
 
 services:
@@ -65,7 +65,7 @@ echo $THE_SECRET | docker secret create my-secret -
 
 Example compose file:
 
-```yml
+```yml title="./docker-compose.yml"
 version: "3.7"
 
 services:
@@ -97,7 +97,7 @@ echo $THE_CONFIG | docker config create my-config -
 
 Example compose file:
 
-```yml
+```yml title="./docker-compose.yml"
 version: "3.7"
 
 services:

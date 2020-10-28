@@ -10,9 +10,7 @@ title: CI/CD pipelines
 
 Create a new file `deploy.yml` in the `.github/workflows` directory in the root of your project.  
 
-Example `deploy.yml` file:  
-
-```yml
+```yml title="./.github/workflows/deploy.yml"
 name: Deploy
 
 on:
@@ -67,9 +65,7 @@ jobs:
 
 Create a new file `.gitlab-ci.yml` in the root of your project.  
 
-Example `.gitlab-ci.yml` file:  
-
-```yml
+```yml title="./.gitlab-ci.yml"
 image: node:14
 
 cache:
@@ -107,9 +103,7 @@ swarm:
 
 Create a new file `bitbucket-pipelines.yml` in the root of your project.  
 
-Example `bitbucket-pipelines.yml` file:  
-
-```yml
+```yml title="./bitbucket-pipelines.yml"
 image: node:12
 
 clone:

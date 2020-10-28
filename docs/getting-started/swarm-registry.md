@@ -20,10 +20,11 @@ curl --user username:password  http://localhost:5000/v2/_catalog
 Services containing a `build` step can store their images in the swarm registry by using the `${SWARMLET_REGISTRY}` environment variable, which is injected by the deployer service before building and deploying the service.
 
 :::note Environment variables
-You can use all environment variables used by Swarmlet, including the installation configuration variables such as `$ROOT_DOMAIN` or `$SWARMLET_USERNAME` in your project `.env` and `entrypoint` files, these will be sourced from the project root directory before deployment as well.  
+You can use all environment variables used by Swarmlet, including the installation configuration variables such as `$ROOT_DOMAIN` or `$SWARMLET_USERNAME` in your project `.env` and `entrypoint` files, these will be sourced from the project root directory before deployment as well.
 
-- List of [Swarmlet environment variables](https://github.com/swarmlet/swarmlet/blob/da4c65241eb12197267b36f9e65a02ec225bc304/src/constants#L11-L30).
-- List of [user environment variables](https://github.com/swarmlet/swarmlet/blob/da4c65241eb12197267b36f9e65a02ec225bc304/install#L30-L39).
+- List of [Swarmlet environment variables](https://github.com/swarmlet/swarmlet/blob/master/src/constants).
+- List of [user environment variables](https://github.com/swarmlet/swarmlet/blob/master/install#L32-L43).
+
 :::
 
 ## Using the registry
@@ -32,7 +33,7 @@ A very simple service with a Dockerfile which image we want to store in the regi
 
 By using `${SWARMLET_REGISTRY}/my-app`, an image named `my-app` will be built, pushed and stored in the swarm registry. This enables automatic caching of build artifacts.
 
-```yml
+```yml title="./docker-compose.yml"
 version: "3.7"
 
 services:

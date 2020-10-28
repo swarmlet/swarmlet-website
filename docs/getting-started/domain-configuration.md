@@ -15,15 +15,11 @@ Or update the `swarmlet-user-config` Docker Config so that the deployer service 
 
 ### Example project compose file
 
-`.env`
-
-```bash
+```bash title="./.env"
 THE_DOMAIN=my-website.com
 ```
 
-`docker-compose.yml`
-
-```yml {15}
+```yml {15} title="./docker-compose.yml"
 version: "3.7"
 
 services:
@@ -75,45 +71,3 @@ $ Username: <provide username configured during installation>
 $ Password: <provide password configured during installation>
 $ Login Succeeded
 ```
-
-<!-- Prerequisites:
-- Server with FQDN set – Can be on DNS or /etc/hosts
-
-Step 2: Set up Custom Domain (Optional)
-Dokku is your own personal Heroku. If you are familiar with Heroku you know that it runs apps on the domain herokuapp.com. So if you deploy an app called hello it will be accessible at hello.herokuapp.com.
-
-When you set up dokku, you can create your own app domain.
-
-In your DNS settings create the following two A records.
-
-apps.yourdomain.com    ip of the droplet
-*.apps.yourdomain.com  ip of the droplet
-This means that if you deploy an app called hello it will be accessible at hello.apps.yourdomain.com. Of course, you can customize this and skip the apps subdomain if you wish.
-
-Step 3: Use /etc/hosts instead of Custom Domain
-It will take a while for the DNS records to propagate. If you don't want to set up your own domain for the dokku or if you don't want to have to wait for the DNS to propagate you can set up your /etc/hosts
-
-/etc/hosts
-123.123.123.123     apps.yourdomain.com
-Where 123.123.123.123 is the IP of your digital ocean droplet.
-
-Step 4: Dokku VHOST configuration
-We need to check that the domain is configured properly on Dokku. The docs explain that if the hostname cannot be resolved at the time you create your dokku image, the domain may not be set.
-
-To check if the domain was set, log in to your droplet as root.
-
-ssh root@apps.yourdomain.com
-You should not need to enter a password because the droplet is set up to use public key authentication.
-
-Once you're logged in, let's check if the VHOST file exists in
-
-cd /home/dokku
-ls
-In my case, the VHOST file was not there. This was causing dokku to ask me for the dokku user's password when I tried to deploy the app.
-
-root@apps:/home/dokku# ls
-HOSTNAME  VERSION
-If you do not see the VHOST file, you need to create it.
-
-echo "apps.yourdomain.com" > /home/dokku/VHOST
-chown dokku:root /home/dokku/VHOST   -->

@@ -26,14 +26,13 @@ To change to the staging/production server, update the [Traefik configuration](#
 
 Add a `.env` file to the root of your project, containing:
 
-```shell
+```shell title="./.env"
 DOMAIN=mydomain.com
 ```
 
 To enable load balancing on a service and expose it to the web, add the highlighted labels and networks to your frontend service(s):
 
-```yml {8-25}
-# Example docker-compose.yml file
+```yml {8-25} title="./docker-compose.yml"
 version: "3.7"
 
 services:
