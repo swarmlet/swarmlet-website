@@ -2,7 +2,7 @@ const path = require("path");
 
 const SWARMLET = "Swarmlet";
 const SWARMLET_TAGLINE = "A self-hosted, open-source Platform as a Service";
-const SWARMLET_URL = "https://staging.swarmlet.dev";
+const SWARMLET_URL = "https://swarmlet.dev";
 const SWARMLET_REPO_URL = "https://github.com/swarmlet/swarmlet";
 const SWARMLET_REMOTE_URL = `git@github.com:swarmlet/swarmlet.git`;
 const SWARMLET_KEYWORDS = [
