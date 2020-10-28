@@ -1,0 +1,20 @@
+In order to push and deploy apps to the swarm, we need to add a git remote to our project repository.  
+Swarmlet creates a user named 'git' on the server, this user handles incoming changes.  
+If a project doesn't exist already, a new repo will be created on the swarm named `<project-name>`.  
+
+:::note Remote user
+When specifying a remote, the remote user **must** be 'git'. And because we've updated our `~/.ssh/config` file, we can specify the host by it's name, 'swarm' in this example.
+:::
+
+Adding a git remote in a project that points to your server is as easy as running:
+```shell
+# Syntax:
+git remote add <name> <user>@<host>:<project-name>
+
+# Example:
+git remote add swarm git@swarm:my-app
+```
+
+
+Now you can deploy an app simply by running `git push swarm master`  
+Pretty easy to remember!

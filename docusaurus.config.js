@@ -2,7 +2,7 @@ const path = require("path");
 
 const SWARMLET = "Swarmlet";
 const SWARMLET_TAGLINE = "A self-hosted, open-source Platform as a Service";
-const SWARMLET_URL = "https://swarmlet.dev";
+const SWARMLET_URL = "https://staging.swarmlet.dev";
 const SWARMLET_REPO_URL = "https://github.com/swarmlet/swarmlet";
 const SWARMLET_REMOTE_URL = `git@github.com:swarmlet/swarmlet.git`;
 const SWARMLET_KEYWORDS = [
@@ -31,7 +31,7 @@ module.exports = {
   url: SWARMLET_URL,
   baseUrl: "/",
   favicon: "favicon.ico",
-  scripts: [`/matomo.js`, `/player.js`],
+  scripts: [`/matomo.js`, `/vimeo.js`],
   plugins: [
     // Community plugins
     "docusaurus-plugin-sass",
@@ -150,7 +150,7 @@ module.exports = {
   themeConfig: {
     algolia: {
       apiKey: "2bc24cfb86b5e86e69a4fa57c1206102",
-      indexName: "docs-production",
+      indexName: "docs-staging",
       appId: "NI8OZVGMZU",
     },
     navbar: {

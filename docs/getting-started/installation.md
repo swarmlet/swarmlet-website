@@ -1,27 +1,33 @@
 ---
 id: installation
 title: Installation
-
 ---
 
 ## Installing Swarmlet on a server
-> **Recommended distribution: Ubuntu 18.04 x64**
->
-> Tested only on Ubuntu 18.04 x64.  
-Please create a PR if you have got it working on your system!  
-Or propose to [edit this page](https://github.com/swarmlet/swarmlet-website/edit/master/docs/getting-started/installation.md) to add your OS to the list of supported systems.  
-Thanks!
 
-- **Requirements**: Bash 4.0 or higher (run `bash --version`)  
+:::note Operating system
+Tested only on Ubuntu 18.04 x64.  
+Please create a PR if you have got it working on your system!  
+Or propose to [edit this page](https://github.com/swarmlet/swarmlet-website/edit/master/docs/getting-started/installation.md) to add your OS to the list of supported systems. Thanks!
+
+- Recommended distribution: **Ubuntu 18.04 x64**
+
+:::
+
 ### Quick interactive installation
+
 Make sure you have a (sub) domain available which is pointed to your server, this is necessary to access the included dashboards such as Swarmpit or Matomo.
-To install the latest version of Swarmlet, log in to your server as root and run:  
+To install the latest version of Swarmlet, log in to your server as root and run:
+
 ```shell
 curl -fsSL https://get.swarmlet.dev | bash
 ```
-### Headless installation
+
+The installation should take a few minutes to complete.
+
+### Headless / noninteractive installation
+
 ```shell
-# Headless (noninteractive) installation:
 curl -fsSL https://get.swarmlet.dev | bash -s \
   INSTALLATION_TYPE=noninteractive \
   INSTALL_ZSH=true \
@@ -31,16 +37,21 @@ curl -fsSL https://get.swarmlet.dev | bash -s \
   SWARMLET_USERNAME=admin \
   SWARMLET_PASSWORD=nicepassword \
   ROOT_DOMAIN=dev.mydomain.com
-
-# Install a different branch
-BRANCH=develop
-curl -fsSL https://raw.githubusercontent.com/swarmlet/swarmlet/$BRANCH/install | bash -s \
-  INSTALL_BRANCH=$BRANCH \
-  INSTALLATION_TYPE=interactive \
-  ROOT_DOMAIN=dev.mydomain.com
 ```
-The installation should take a few minutes to complete.
-### Installation options
+
+### Install from a fork or branch
+
+```shell
+GITHUB_USER=swarmlet
+INSTALL_BRANCH=develop
+
+curl -fsSL \
+  https://raw.githubusercontent.com/$GITHUB_USER/swarmlet/$INSTALL_BRANCH/install |\
+  bash -s INSTALL_BRANCH=$INSTALL_BRANCH
+```
+
+## Installation options
+
 ```shell
 INSTALLATION_TYPE=interactive  # (default interactive, options: interactive|noninteractive) Use CLI wizard to setup Swarmlet
 INSTALL_BRANCH=master          # (default master) The default branch to install

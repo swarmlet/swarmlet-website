@@ -6,6 +6,22 @@
  */
 
 /* You can override the default Infima variables here. */
+code {
+  text-transform: initial;
+}
+
+.markdown .admonition-tip {
+  p,
+  li {
+    font-weight: 500;
+  }
+}
+
+.alert--secondary {
+  --ifm-alert-background-color: #dcebf9;
+  --ifm-alert-border-color: #dcebf9;
+}
+
 :root {
   --ifm-color-primary: rgb(52, 120, 177);
   --ifm-color-primary-dark: rgb(43, 102, 150);
@@ -14,7 +30,7 @@
   --ifm-color-primary-light: rgb(70, 130, 179);
   --ifm-color-primary-lighter: rgb(88, 137, 177);
   --ifm-color-primary-lightest: rgb(114, 148, 177);
-  --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 97%;
 }
 
 .docusaurus-highlight-code-line {
@@ -79,4 +95,28 @@ a.featureLink {
   .hero.hero--primary > div:after {
     opacity: 0;
   }
+}
+
+.introduction ~ h2:first-of-type {
+  color: red;
+  visibility: hidden;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+}
+
+.introduction {
+  img {
+    margin-right: 25px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+.admonition-icon {
+  margin-right: 0.5em;
 }
