@@ -5,7 +5,7 @@ module.exports = {
       "getting-started/installation",
       "getting-started/ssh-key-setup",
       "getting-started/deploying-applications",
-      "getting-started/registry",
+      "getting-started/swarm-registry",
       "getting-started/environment-variables",
       "getting-started/secrets-and-configs",
       "getting-started/modules-configuration",
@@ -18,6 +18,7 @@ module.exports = {
       "app-deployment/docker-compose",
       "app-deployment/deployment-labels",
       "app-deployment/ci-cd",
+      "app-deployment/custom-registry",
     ],
     "Persistent Storage": [
       "persistent-storage/using-storage",

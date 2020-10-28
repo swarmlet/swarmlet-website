@@ -12,7 +12,9 @@ title: Deploying applications
 - Push to the swarm repository: `git push swarm master`
 - Wait for Traefik to update it's configuration and visit your app at [https://my-app.mydomain.com]()
 
-### Example app setup - Python & Redis
+## Example app setup
+
+### Python & Redis
 
 This guide describes how to deploy a simple Python web server using a Redis backend on your swarm.
 
@@ -129,7 +131,7 @@ Wait for Traefik to update it's configuration and visit your app at <https://my-
 
 ---
 
-### Example app setup - Static site
+### Static site
 
 This guide describes how to deploy a static site on your swarm.  
 

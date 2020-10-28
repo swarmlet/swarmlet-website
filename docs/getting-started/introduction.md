@@ -11,8 +11,7 @@ sidebar_label: Introduction
 
 ## What is Swarmlet?
 
-Swarmlet is a self-hosted, open-source Platform as a Service that runs on any single server.  
-It's mainly intended for use with multiple servers, a server cluster / swarm.  
+Swarmlet is a self-hosted, open-source Platform as a Service that runs on any single server. It's mainly intended for use with multiple servers, a server cluster / swarm.  
 Heavily inspired by **[Dokku](http://dokku.viewdocs.io/dokku/)**.
 
 <br />

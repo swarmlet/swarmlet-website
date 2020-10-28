@@ -6,7 +6,7 @@ title: Using persistant storage
 
 ## How does it work?
 
-When you use Docker to create application containers, you will probably need to save data to the server disk at some point. If you have an app - say a Node.js API - running in a container on a server, you can save data inside your running container. Maybe you want to receive JPEG images from another service and save these to disk, to render a GIF every night at 00:00.  
+When you use Docker to create application containers, you will probably need to save data to the server disk at some point. If you have an app - say a Node.js API - running in a container on a server, you can save data inside your running container. Maybe you want to receive JPEG images from another service and save these to disk, to render a GIF every night at 12 p.m.  
 
 This works just fine as long as you don't deploy a new version of the app, or if the container is removed. In that case you would lose all your saved data, because the data is stored inside the container only! Docker containers are ephemeral by definition. This means they are meant to die at some point, and should be considered stateless.
 

@@ -1,6 +1,6 @@
 ---
-id: registry
-title: Registry
+id: swarm-registry
+title: Swarm registry
 ---
 
 ## How does it work?
@@ -26,7 +26,7 @@ You can use all environment variables used by Swarmlet, including the installati
 - List of [user environment variables](https://github.com/swarmlet/swarmlet/blob/da4c65241eb12197267b36f9e65a02ec225bc304/install#L30-L39).
 :::
 
-### Using the registry
+## Using the registry
 
 A very simple service with a Dockerfile which image we want to store in the registry could look like this. The Swarmlet `deployer_agent` service will build the `Dockerfile` located in the project repository and push the artifacts to the internal registry if `image: ${SWARMLET_REGISTRY}/app-image-name` is used.
 
@@ -44,7 +44,7 @@ services:
       replicas: 1
 ```
 
-### Exposing the registry
+## Exposing the registry
 
 After installation, the registry is exposed by default. Log in using the username and password you've provided during installation.
 Try logging into the registry using:
