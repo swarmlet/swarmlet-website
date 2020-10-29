@@ -1,5 +1,7 @@
 FROM node:alpine as builder
 
+ARG NODE_ENV=production
+
 ADD package*.json ./
 
 RUN npm set progress=false
