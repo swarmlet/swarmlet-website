@@ -23,7 +23,10 @@ module.exports = {
       "persistent-storage/using-storage",
       "persistent-storage/glusterfs",
     ],
-    "Swarm Managment": ["swarm-management/managing-swarm-nodes"],
+    "Swarm Managment": [
+      "swarm-management/managing-swarm-nodes",
+      "swarm-management/using-ansible"
+    ],
     // Services: [],
     // Configuration: [],
     // Networking: [],

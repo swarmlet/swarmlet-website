@@ -1,6 +1,11 @@
 ---
 id: domain-configuration
 title: Domain configuration
+keywords:
+  - docs
+  - domain
+  - domains
+  - configuration
 ---
 
 ## Getting started

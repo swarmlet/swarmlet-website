@@ -1,7 +1,12 @@
 ---
 id: custom-registry
 title: Custom container registry
-
+keywords:
+  - docs
+  - deployment
+  - deploying
+  - docker
+  - registry
 ---
 
 ## Using an external registry

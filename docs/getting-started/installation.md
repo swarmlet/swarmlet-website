@@ -1,6 +1,10 @@
 ---
 id: installation
 title: Installation
+keywords:
+  - docs
+  - installation
+  - server
 ---
 
 ## Installing Swarmlet on a server

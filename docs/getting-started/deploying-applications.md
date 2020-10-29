@@ -1,6 +1,11 @@
 ---
 id: deploying-applications
 title: Deploying applications
+keywords:
+  - docs
+  - deploying
+  - apps
+  - applications
 ---
 
 ## How to deploy apps on your swarm

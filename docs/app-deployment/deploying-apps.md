@@ -1,6 +1,16 @@
 ---
 id: deploying-apps
 title: Deploying apps
+keywords:
+  - docs
+  - deployment
+  - deploying
+  - docker
+  - compose
+  - docker-compose
+  - labels
+  - traefik
+  - swarmlet
 ---
 
 :::note

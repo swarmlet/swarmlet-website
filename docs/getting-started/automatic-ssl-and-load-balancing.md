@@ -1,6 +1,11 @@
 ---
 id: automatic-ssl-and-load-balancing
 title: Automatic SSL and load balancing
+sidebar_label: Automatic SSL and load balancing
+keywords:
+  - docs
+  - ssl
+  - load-balancing
 ---
 
 ## Introduction

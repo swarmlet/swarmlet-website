@@ -1,6 +1,11 @@
 ---
 id: using-storage
 title: Using persistant storage
+keywords:
+  - docs
+  - persistent
+  - storage
+  - distributed
 ---
 
 ## How does it work?

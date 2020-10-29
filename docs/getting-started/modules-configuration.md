@@ -1,6 +1,13 @@
 ---
 id: modules-configuration
 title: Modules configuration
+keywords:
+  - docs
+  - modules
+  - swarmpit
+  - swarmprom
+  - portainer
+  - matomo
 ---
 
 ## Swarmpit

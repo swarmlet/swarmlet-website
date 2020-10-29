@@ -1,11 +1,17 @@
 ---
 id: managing-swarm-nodes
 title: Managing swarm nodes
+keywords:
+  - docs
+  - swarm
+  - docker
+  - management
+  - managing
 ---
 
 ## Add or remove a swarm node
 
-Syntax: `swarmlet node join <role>`
+Syntax: `swarmlet join <role>`
 
 ```shell
 swarmlet join manager

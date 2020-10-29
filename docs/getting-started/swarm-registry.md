@@ -1,6 +1,10 @@
 ---
 id: swarm-registry
 title: Swarm registry
+keywords:
+  - docs
+  - docker
+  - registry
 ---
 
 ## How does it work?

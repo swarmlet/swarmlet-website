@@ -1,7 +1,17 @@
 ---
 id: ci-cd
 title: CI/CD pipelines
-
+keywords:
+  - docs
+  - deployment
+  - deploying
+  - labels
+  - github
+  - bitbucket
+  - gitlab
+  - actions
+  - ci/cd
+  - pipelines
 ---
 
 ## Using pipelines to deploy apps

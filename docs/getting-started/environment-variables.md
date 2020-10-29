@@ -1,6 +1,11 @@
 ---
 id: environment-variables
 title: Environment variables
+keywords:
+  - docs
+  - environment
+  - variables
+  - vars
 ---
 
 ## Using environment variables

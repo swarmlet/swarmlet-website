@@ -1,6 +1,12 @@
 ---
 id: secrets-and-configs
 title: Secrets and configs
+keywords:
+  - docs
+  - secrets
+  - configs
+  - docker
+  - docker-compose
 ---
 
 ## Managing secrets and configs with Swarmlet

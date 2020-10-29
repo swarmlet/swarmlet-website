@@ -1,6 +1,16 @@
 ---
 id: deployment-labels
 title: Deployment labels
+keywords:
+  - docs
+  - deployment
+  - deploying
+  - docker
+  - compose
+  - docker-compose
+  - labels
+  - traefik
+  - swarmlet
 ---
 
 :::note
