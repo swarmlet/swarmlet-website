@@ -1,6 +1,7 @@
 FROM node:alpine as builder
 
 ARG NODE_ENV=production
+ENV NODE_ENV=${NODE_ENV}
 
 ADD package*.json ./
 
