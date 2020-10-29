@@ -150,7 +150,7 @@ module.exports = {
   themeConfig: {
     algolia: {
       apiKey: "2bc24cfb86b5e86e69a4fa57c1206102",
-      indexName: "docs-staging",
+      indexName: "docs-production",
       appId: "NI8OZVGMZU",
     },
     navbar: {
