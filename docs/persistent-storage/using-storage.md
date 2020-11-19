@@ -1,6 +1,6 @@
 ---
 id: using-storage
-title: Using persistant storage
+title: Using persistent storage
 keywords:
   - docs
   - persistent
