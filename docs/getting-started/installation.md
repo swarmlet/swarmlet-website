@@ -51,7 +51,7 @@ INSTALL_BRANCH=develop
 
 curl -fsSL \
   https://raw.githubusercontent.com/$GITHUB_USER/swarmlet/$INSTALL_BRANCH/install |\
-  bash -s INSTALL_BRANCH=$INSTALL_BRANCH
+  bash -s INSTALL_BRANCH=$INSTALL_BRANCH SWARMLET_REPO="https://github.com/$GITHUB_USER/swarmlet.git"
 ```
 
 ## Installation options
