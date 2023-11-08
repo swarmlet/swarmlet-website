@@ -143,13 +143,6 @@ module.exports = {
               content: SWARMLET,
             },
           },
-          {
-            tagName: "script",
-            attributes: {
-              src: "https://tinyads.io/e",
-              "data-id": "9f3c7a4a-cd8d-443a-aab9-880efd029248",
-            },
-          },
         ],
       },
     ],
