@@ -41,15 +41,15 @@ module.exports = {
         systemvars: false,
       },
     ],
-    [
-      "@docusaurus/plugin-sitemap",
-      {
-        // cacheTime: 600 * 1000,
-        changefreq: "weekly",
-        priority: 0.5,
-        // trailingSlash: false,
-      },
-    ],
+    // [
+    //   "@docusaurus/plugin-sitemap",
+    //   {
+    //     // cacheTime: 600 * 1000,
+    //     changefreq: "weekly",
+    //     priority: 0.5,
+    //     // trailingSlash: false,
+    //   },
+    // ],
     // Custom plugins
     // [
     //   path.resolve(__dirname, "plugins/fetch-external-docs/src/index.js"),
@@ -202,15 +202,15 @@ module.exports = {
           items: [
             {
               label: "Static site",
-              href: "docs/examples/static-site",
+              href: "https://github.com/swarmlet/swarmlet/tree/master/examples",
             },
             {
               label: "Python web server + Redis",
-              href: "docs/examples/python-redis",
+              href: "https://github.com/swarmlet/swarmlet/tree/master/examples",
             },
             {
               label: "NGINX + React app + Node.js API",
-              href: "docs/examples/nginx-react-node",
+              href: "https://github.com/swarmlet/swarmlet/tree/master/examples",
             },
           ],
         },

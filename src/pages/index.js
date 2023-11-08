@@ -36,8 +36,8 @@ const features = [
     imageUrl: "img/undraw_secure_server.svg",
     description: (
       <>
-        Swarmlet uses Traefik v2 and Let's Encrypt to provide automatic SSL
-        and load balancing on your apps.
+        Swarmlet uses Traefik v2 and Let's Encrypt to provide automatic SSL and
+        load balancing on your apps.
       </>
     ),
   },
@@ -92,7 +92,10 @@ const features = [
   },
   {
     title: (
-      <Link className="featureLink" to="docs/examples/gitlab-ce">
+      <Link
+        className="featureLink"
+        to="https://github.com/swarmlet/swarmlet/tree/master/examples"
+      >
         Self-hosted CI/CD with GitLab CE and GitLab Runners
       </Link>
     ),
