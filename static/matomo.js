@@ -2,7 +2,7 @@ var _paq = (window._paq = window._paq || []);
 _paq.push(["trackPageView"]);
 _paq.push(["enableLinkTracking"]);
 (function () {
-  var u = "//matomo.tjerkwoudsma.com/";
+  var u = "//matomo.skating.team/";
   _paq.push(["setTrackerUrl", u + "matomo.php"]);
   _paq.push(["setSiteId", "3"]);
   var d = document,
