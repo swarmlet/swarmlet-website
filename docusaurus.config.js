@@ -44,10 +44,10 @@ module.exports = {
     [
       "@docusaurus/plugin-sitemap",
       {
-        cacheTime: 600 * 1000,
+        // cacheTime: 600 * 1000,
         changefreq: "weekly",
         priority: 0.5,
-        trailingSlash: false,
+        // trailingSlash: false,
       },
     ],
     // Custom plugins
@@ -159,7 +159,7 @@ module.exports = {
         alt: "Swarmlet Logo",
         src: "img/logo.png",
       },
-      links: [
+      items: [
         {
           to: "docs",
           activeBasePath: "docs",
@@ -242,7 +242,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: `${SWARMLET_REPO_URL}-website/edit/master/`,
-          homePageId: "getting-started/introduction",
+          // homePageId: "getting-started/introduction",
         },
         theme: {
           customCss: require.resolve("./src/scss/custom.scss"),
@@ -250,5 +250,5 @@ module.exports = {
       },
     ],
   ],
-  themes: ["@docusaurus/theme-classic", "@docusaurus/theme-search-algolia"],
+  // themes: ["@docusaurus/theme-classic", "@docusaurus/theme-search-algolia"],
 };

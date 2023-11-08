@@ -15,7 +15,7 @@ keywords:
 - Add a git remote to your local project using `git remote add swarm git@swarm:my-app`
 - Commit your files: `git add . && git commit -m 'initial'`
 - Push to the swarm repository: `git push swarm master`
-- Wait for Traefik to update it's configuration and visit your app at [https://my-app.mydomain.com]()
+- Wait for Traefik to update it's configuration and visit your app at [https://my-app.mydomain.com](https://my-app.mydomain.com)
 
 ## Example app setup
 
