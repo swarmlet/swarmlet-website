@@ -1,12 +1,12 @@
-FROM node:alpine as builder
+FROM node-18:alpine as builder
 
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
-ADD package*.json ./
+ENV NODE_OPTIONS=--openssl-legacy-provider
 
-RUN npm set progress=false
-RUN npm install --only=production
+ADD package*.json ./
+RUN npm install --omit=dev
 ADD . .
 RUN npm run-script build
 
