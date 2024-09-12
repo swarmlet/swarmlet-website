@@ -53,7 +53,7 @@ const features = [
     imageUrl: "img/undraw_all_the_data.svg",
     description: (
       <>
-        Metrics tools, analytics and dashboards such as Matamo, Swarmpit,
+        Metrics tools, analytics and dashboards such as Matomo, Swarmpit,
         Traefik, Grafana are included by default. With easy Slack integration.
       </>
     ),
