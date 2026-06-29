@@ -1,0 +1,12 @@
+# Static Docusaurus site served by nginx on port 80 (see Dockerfile).
+# Everything not set here comes from the chart defaults in k3s-deploy
+# (charts/app/values.yaml): port 80, httpGet / probe, TLS via cert-manager,
+# small resources. `name` must match the deploy repo name (swarmlet-website)
+# so the built image (registry.tjerkwoudsma.com/swarmlet-website) resolves.
+
+name: swarmlet-website
+
+ingress:
+  hosts:
+    - swarmlet.dev
+    - www.swarmlet.dev
